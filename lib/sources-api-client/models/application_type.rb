@@ -13,28 +13,37 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class EndpointsCollection
-    attr_accessor :meta
+  class ApplicationType
+    attr_accessor :created_at
 
-    attr_accessor :links
+    attr_accessor :display_name
 
-    attr_accessor :data
+    # ID of the resource
+    attr_accessor :id
+
+    attr_accessor :name
+
+    attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'meta' => :'meta',
-        :'links' => :'links',
-        :'data' => :'data'
+        :'created_at' => :'created_at',
+        :'display_name' => :'display_name',
+        :'id' => :'id',
+        :'name' => :'name',
+        :'updated_at' => :'updated_at'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'meta' => :'CollectionMetadata',
-        :'links' => :'CollectionLinks',
-        :'data' => :'Array<Endpoint>'
+        :'created_at' => :'DateTime',
+        :'display_name' => :'String',
+        :'id' => :'String',
+        :'name' => :'String',
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -46,18 +55,24 @@ module SourcesApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'meta')
-        self.meta = attributes[:'meta']
+      if attributes.has_key?(:'created_at')
+        self.created_at = attributes[:'created_at']
       end
 
-      if attributes.has_key?(:'links')
-        self.links = attributes[:'links']
+      if attributes.has_key?(:'display_name')
+        self.display_name = attributes[:'display_name']
       end
 
-      if attributes.has_key?(:'data')
-        if (value = attributes[:'data']).is_a?(Array)
-          self.data = value
-        end
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -65,13 +80,28 @@ module SourcesApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] id Value to be assigned
+    def id=(id)
+      if !id.nil? && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "id", must conform to the pattern /^\d+$/.'
+      end
+
+      @id = id
     end
 
     # Checks equality by comparing each attribute.
@@ -79,9 +109,11 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          meta == o.meta &&
-          links == o.links &&
-          data == o.data
+          created_at == o.created_at &&
+          display_name == o.display_name &&
+          id == o.id &&
+          name == o.name &&
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -93,7 +125,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [meta, links, data].hash
+      [created_at, display_name, id, name, updated_at].hash
     end
 
     # Builds the object from hash

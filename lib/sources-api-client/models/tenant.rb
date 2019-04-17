@@ -13,28 +13,28 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class EndpointsCollection
-    attr_accessor :meta
+  class Tenant
+    attr_accessor :name
 
-    attr_accessor :links
+    attr_accessor :description
 
-    attr_accessor :data
+    attr_accessor :external_tenant
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'meta' => :'meta',
-        :'links' => :'links',
-        :'data' => :'data'
+        :'name' => :'name',
+        :'description' => :'description',
+        :'external_tenant' => :'external_tenant'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'meta' => :'CollectionMetadata',
-        :'links' => :'CollectionLinks',
-        :'data' => :'Array<Endpoint>'
+        :'name' => :'String',
+        :'description' => :'String',
+        :'external_tenant' => :'String'
       }
     end
 
@@ -46,18 +46,16 @@ module SourcesApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'meta')
-        self.meta = attributes[:'meta']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'links')
-        self.links = attributes[:'links']
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'data')
-        if (value = attributes[:'data']).is_a?(Array)
-          self.data = value
-        end
+      if attributes.has_key?(:'external_tenant')
+        self.external_tenant = attributes[:'external_tenant']
       end
     end
 
@@ -79,9 +77,9 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          meta == o.meta &&
-          links == o.links &&
-          data == o.data
+          name == o.name &&
+          description == o.description &&
+          external_tenant == o.external_tenant
     end
 
     # @see the `==` method
@@ -93,7 +91,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [meta, links, data].hash
+      [name, description, external_tenant].hash
     end
 
     # Builds the object from hash

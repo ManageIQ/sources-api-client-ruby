@@ -1,26 +1,31 @@
 # SourcesApiClient::DefaultApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/r/insights/platform/sources/v0.1*
+All URIs are relative to *https://cloud.redhat.com//api/sources/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_application**](DefaultApi.md#create_application) | **POST** /applications | Create a new Application
 [**create_authentication**](DefaultApi.md#create_authentication) | **POST** /authentications | Create a new Authentication
 [**create_endpoint**](DefaultApi.md#create_endpoint) | **POST** /endpoints | Create a new Endpoint
 [**create_source**](DefaultApi.md#create_source) | **POST** /sources | Create a new Source
 [**create_source_type**](DefaultApi.md#create_source_type) | **POST** /source_types | Create a new SourceType
+[**delete_application**](DefaultApi.md#delete_application) | **DELETE** /applications/{id} | Delete an existing Application
 [**delete_authentication**](DefaultApi.md#delete_authentication) | **DELETE** /authentications/{id} | Delete an existing Authentication
 [**delete_endpoint**](DefaultApi.md#delete_endpoint) | **DELETE** /endpoints/{id} | Delete an existing Endpoint
 [**delete_source**](DefaultApi.md#delete_source) | **DELETE** /sources/{id} | Delete an existing Source
 [**get_documentation**](DefaultApi.md#get_documentation) | **GET** /openapi.json | Return this API document in JSON format
+[**list_application_types**](DefaultApi.md#list_application_types) | **GET** /application_types | List ApplicationTypes
+[**list_applications**](DefaultApi.md#list_applications) | **GET** /applications | List Applications
 [**list_authentications**](DefaultApi.md#list_authentications) | **GET** /authentications | List Authentications
 [**list_endpoint_authentications**](DefaultApi.md#list_endpoint_authentications) | **GET** /endpoints/{id}/authentications | List Authentications for Endpoint
 [**list_endpoints**](DefaultApi.md#list_endpoints) | **GET** /endpoints | List Endpoints
-[**list_source_availabilities**](DefaultApi.md#list_source_availabilities) | **GET** /sources/{id}/availabilities | List Availabilities for Source
+[**list_source_applications**](DefaultApi.md#list_source_applications) | **GET** /sources/{id}/applications | List Applications for Source
 [**list_source_endpoints**](DefaultApi.md#list_source_endpoints) | **GET** /sources/{id}/endpoints | List Endpoints for Source
-[**list_source_type_availabilities**](DefaultApi.md#list_source_type_availabilities) | **GET** /source_types/{id}/availabilities | List Availabilities for SourceType
 [**list_source_type_sources**](DefaultApi.md#list_source_type_sources) | **GET** /source_types/{id}/sources | List Sources for SourceType
 [**list_source_types**](DefaultApi.md#list_source_types) | **GET** /source_types | List SourceTypes
 [**list_sources**](DefaultApi.md#list_sources) | **GET** /sources | List Sources
+[**show_application**](DefaultApi.md#show_application) | **GET** /applications/{id} | Show an existing Application
+[**show_application_type**](DefaultApi.md#show_application_type) | **GET** /application_types/{id} | Show an existing ApplicationType
 [**show_authentication**](DefaultApi.md#show_authentication) | **GET** /authentications/{id} | Show an existing Authentication
 [**show_endpoint**](DefaultApi.md#show_endpoint) | **GET** /endpoints/{id} | Show an existing Endpoint
 [**show_source**](DefaultApi.md#show_source) | **GET** /sources/{id} | Show an existing Source
@@ -30,8 +35,59 @@ Method | HTTP request | Description
 [**update_source**](DefaultApi.md#update_source) | **PATCH** /sources/{id} | Update an existing Source
 
 
+# **create_application**
+> Array&lt;Application&gt; create_application(application)
+
+Create a new Application
+
+Creates a Application object
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+application = SourcesApiClient::Application.new # Application | Application attributes to create
+
+begin
+  #Create a new Application
+  result = api_instance.create_application(application)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->create_application: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application** | [**Application**](Application.md)| Application attributes to create | 
+
+### Return type
+
+[**Array&lt;Application&gt;**](Application.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **create_authentication**
-> Object create_authentication(authentication)
+> Array&lt;Authentication&gt; create_authentication(authentication)
 
 Create a new Authentication
 
@@ -68,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;Authentication&gt;**](Authentication.md)
 
 ### Authorization
 
@@ -82,7 +138,7 @@ Name | Type | Description  | Notes
 
 
 # **create_endpoint**
-> Object create_endpoint(endpoint)
+> Array&lt;Endpoint&gt; create_endpoint(endpoint)
 
 Create a new Endpoint
 
@@ -119,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;Endpoint&gt;**](Endpoint.md)
 
 ### Authorization
 
@@ -133,7 +189,7 @@ Name | Type | Description  | Notes
 
 
 # **create_source**
-> Object create_source(source)
+> Array&lt;Source&gt; create_source(source)
 
 Create a new Source
 
@@ -170,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;Source&gt;**](Source.md)
 
 ### Authorization
 
@@ -184,7 +240,7 @@ Name | Type | Description  | Notes
 
 
 # **create_source_type**
-> Object create_source_type(source_type)
+> Array&lt;SourceType&gt; create_source_type(source_type)
 
 Create a new SourceType
 
@@ -221,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;SourceType&gt;**](SourceType.md)
 
 ### Authorization
 
@@ -231,6 +287,56 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+
+
+# **delete_application**
+> delete_application(id)
+
+Delete an existing Application
+
+Deletes a Application object
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Delete an existing Application
+  api_instance.delete_application(id)
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->delete_application: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 
@@ -428,6 +534,120 @@ nil (empty response body)
 
 
 
+# **list_application_types**
+> ApplicationTypesCollection list_application_types(opts)
+
+List ApplicationTypes
+
+Returns an array of ApplicationType objects
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ApplicationTypes
+  result = api_instance.list_application_types(opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_application_types: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ApplicationTypesCollection**](ApplicationTypesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_applications**
+> ApplicationsCollection list_applications(opts)
+
+List Applications
+
+Returns an array of Application objects
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Applications
+  result = api_instance.list_applications(opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_applications: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ApplicationsCollection**](ApplicationsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **list_authentications**
 > AuthenticationsCollection list_authentications(opts)
 
@@ -449,7 +669,8 @@ end
 api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -467,6 +688,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -505,7 +727,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -524,6 +747,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -561,7 +785,8 @@ end
 api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -579,6 +804,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -595,12 +821,12 @@ Name | Type | Description  | Notes
 
 
 
-# **list_source_availabilities**
-> AvailabilitiesCollection list_source_availabilities(id, opts)
+# **list_source_applications**
+> ApplicationsCollection list_source_applications(id, opts)
 
-List Availabilities for Source
+List Applications for Source
 
-Returns an array of Availability objects
+Returns an array of Application objects
 
 ### Example
 ```ruby
@@ -617,15 +843,16 @@ api_instance = SourcesApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
-  #List Availabilities for Source
-  result = api_instance.list_source_availabilities(id, opts)
+  #List Applications for Source
+  result = api_instance.list_source_applications(id, opts)
   p result
 rescue SourcesApiClient::ApiError => e
-  puts "Exception when calling DefaultApi->list_source_availabilities: #{e}"
+  puts "Exception when calling DefaultApi->list_source_applications: #{e}"
 end
 ```
 
@@ -636,10 +863,11 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
-[**AvailabilitiesCollection**](AvailabilitiesCollection.md)
+[**ApplicationsCollection**](ApplicationsCollection.md)
 
 ### Authorization
 
@@ -674,7 +902,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -693,67 +922,11 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
 [**EndpointsCollection**](EndpointsCollection.md)
-
-### Authorization
-
-[UserSecurity](../README.md#UserSecurity)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **list_source_type_availabilities**
-> AvailabilitiesCollection list_source_type_availabilities(id, opts)
-
-List Availabilities for SourceType
-
-Returns an array of Availability objects
-
-### Example
-```ruby
-# load the gem
-require 'sources-api-client'
-# setup authorization
-SourcesApiClient.configure do |config|
-  # Configure HTTP basic authorization: UserSecurity
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = SourcesApiClient::DefaultApi.new
-id = 'id_example' # String | ID of the resource
-opts = {
-  limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
-}
-
-begin
-  #List Availabilities for SourceType
-  result = api_instance.list_source_type_availabilities(id, opts)
-  p result
-rescue SourcesApiClient::ApiError => e
-  puts "Exception when calling DefaultApi->list_source_type_availabilities: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the resource | 
- **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
- **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
-
-### Return type
-
-[**AvailabilitiesCollection**](AvailabilitiesCollection.md)
 
 ### Authorization
 
@@ -788,7 +961,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -807,6 +981,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -844,7 +1019,8 @@ end
 api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -862,6 +1038,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -899,7 +1076,8 @@ end
 api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -917,10 +1095,113 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
 [**SourcesCollection**](SourcesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_application**
+> Application show_application(id)
+
+Show an existing Application
+
+Returns a Application object
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing Application
+  result = api_instance.show_application(id)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_application: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**Application**](Application.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_application_type**
+> ApplicationType show_application_type(id)
+
+Show an existing ApplicationType
+
+Returns a ApplicationType object
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ApplicationType
+  result = api_instance.show_application_type(id)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_application_type: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**ApplicationType**](ApplicationType.md)
 
 ### Authorization
 
