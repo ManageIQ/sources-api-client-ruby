@@ -13,28 +13,39 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class EndpointsCollection
-    attr_accessor :meta
+  class Application
+    # ID of the resource
+    attr_accessor :application_type_id
 
-    attr_accessor :links
+    attr_accessor :created_at
 
-    attr_accessor :data
+    # ID of the resource
+    attr_accessor :id
+
+    # ID of the resource
+    attr_accessor :source_id
+
+    attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'meta' => :'meta',
-        :'links' => :'links',
-        :'data' => :'data'
+        :'application_type_id' => :'application_type_id',
+        :'created_at' => :'created_at',
+        :'id' => :'id',
+        :'source_id' => :'source_id',
+        :'updated_at' => :'updated_at'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'meta' => :'CollectionMetadata',
-        :'links' => :'CollectionLinks',
-        :'data' => :'Array<Endpoint>'
+        :'application_type_id' => :'String',
+        :'created_at' => :'DateTime',
+        :'id' => :'String',
+        :'source_id' => :'String',
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -46,18 +57,24 @@ module SourcesApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'meta')
-        self.meta = attributes[:'meta']
+      if attributes.has_key?(:'application_type_id')
+        self.application_type_id = attributes[:'application_type_id']
       end
 
-      if attributes.has_key?(:'links')
-        self.links = attributes[:'links']
+      if attributes.has_key?(:'created_at')
+        self.created_at = attributes[:'created_at']
       end
 
-      if attributes.has_key?(:'data')
-        if (value = attributes[:'data']).is_a?(Array)
-          self.data = value
-        end
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'source_id')
+        self.source_id = attributes[:'source_id']
+      end
+
+      if attributes.has_key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -65,13 +82,58 @@ module SourcesApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if !@application_type_id.nil? && @application_type_id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "application_type_id", must conform to the pattern /^\d+$/.')
+      end
+
+      if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
+      end
+
+      if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "source_id", must conform to the pattern /^\d+$/.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !@application_type_id.nil? && @application_type_id !~ Regexp.new(/^\d+$/)
+      return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
+      return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] application_type_id Value to be assigned
+    def application_type_id=(application_type_id)
+      if !application_type_id.nil? && application_type_id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "application_type_id", must conform to the pattern /^\d+$/.'
+      end
+
+      @application_type_id = application_type_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] id Value to be assigned
+    def id=(id)
+      if !id.nil? && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "id", must conform to the pattern /^\d+$/.'
+      end
+
+      @id = id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] source_id Value to be assigned
+    def source_id=(source_id)
+      if !source_id.nil? && source_id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "source_id", must conform to the pattern /^\d+$/.'
+      end
+
+      @source_id = source_id
     end
 
     # Checks equality by comparing each attribute.
@@ -79,9 +141,11 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          meta == o.meta &&
-          links == o.links &&
-          data == o.data
+          application_type_id == o.application_type_id &&
+          created_at == o.created_at &&
+          id == o.id &&
+          source_id == o.source_id &&
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -93,7 +157,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [meta, links, data].hash
+      [application_type_id, created_at, id, source_id, updated_at].hash
     end
 
     # Builds the object from hash

@@ -13,7 +13,7 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class EndpointsCollection
+  class ApplicationsCollection
     attr_accessor :meta
 
     attr_accessor :links
@@ -34,7 +34,7 @@ module SourcesApiClient
       {
         :'meta' => :'CollectionMetadata',
         :'links' => :'CollectionLinks',
-        :'data' => :'Array<Endpoint>'
+        :'data' => :'Array<Application>'
       }
     end
 
