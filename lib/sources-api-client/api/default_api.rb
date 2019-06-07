@@ -23,7 +23,7 @@ module SourcesApiClient
     # Creates a Application object
     # @param application Application attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<Application>]
+    # @return [Application]
     def create_application(application, opts = {})
       data, _status_code, _headers = create_application_with_http_info(application, opts)
       data
@@ -33,7 +33,7 @@ module SourcesApiClient
     # Creates a Application object
     # @param application Application attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Application>, Fixnum, Hash)>] Array<Application> data, response status code and response headers
+    # @return [Array<(Application, Fixnum, Hash)>] Application data, response status code and response headers
     def create_application_with_http_info(application, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_application ...'
@@ -67,7 +67,7 @@ module SourcesApiClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Application>')
+        :return_type => 'Application')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#create_application\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -78,7 +78,7 @@ module SourcesApiClient
     # Creates a Authentication object
     # @param authentication Authentication attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<Authentication>]
+    # @return [Authentication]
     def create_authentication(authentication, opts = {})
       data, _status_code, _headers = create_authentication_with_http_info(authentication, opts)
       data
@@ -88,7 +88,7 @@ module SourcesApiClient
     # Creates a Authentication object
     # @param authentication Authentication attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Authentication>, Fixnum, Hash)>] Array<Authentication> data, response status code and response headers
+    # @return [Array<(Authentication, Fixnum, Hash)>] Authentication data, response status code and response headers
     def create_authentication_with_http_info(authentication, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_authentication ...'
@@ -122,7 +122,7 @@ module SourcesApiClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Authentication>')
+        :return_type => 'Authentication')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#create_authentication\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -133,7 +133,7 @@ module SourcesApiClient
     # Creates a Endpoint object
     # @param endpoint Endpoint attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<Endpoint>]
+    # @return [Endpoint]
     def create_endpoint(endpoint, opts = {})
       data, _status_code, _headers = create_endpoint_with_http_info(endpoint, opts)
       data
@@ -143,7 +143,7 @@ module SourcesApiClient
     # Creates a Endpoint object
     # @param endpoint Endpoint attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Endpoint>, Fixnum, Hash)>] Array<Endpoint> data, response status code and response headers
+    # @return [Array<(Endpoint, Fixnum, Hash)>] Endpoint data, response status code and response headers
     def create_endpoint_with_http_info(endpoint, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_endpoint ...'
@@ -177,7 +177,7 @@ module SourcesApiClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Endpoint>')
+        :return_type => 'Endpoint')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#create_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -188,7 +188,7 @@ module SourcesApiClient
     # Creates a Source object
     # @param source Source attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<Source>]
+    # @return [Source]
     def create_source(source, opts = {})
       data, _status_code, _headers = create_source_with_http_info(source, opts)
       data
@@ -198,7 +198,7 @@ module SourcesApiClient
     # Creates a Source object
     # @param source Source attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Source>, Fixnum, Hash)>] Array<Source> data, response status code and response headers
+    # @return [Array<(Source, Fixnum, Hash)>] Source data, response status code and response headers
     def create_source_with_http_info(source, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_source ...'
@@ -232,7 +232,7 @@ module SourcesApiClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Source>')
+        :return_type => 'Source')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#create_source\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -243,7 +243,7 @@ module SourcesApiClient
     # Creates a SourceType object
     # @param source_type SourceType attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<SourceType>]
+    # @return [SourceType]
     def create_source_type(source_type, opts = {})
       data, _status_code, _headers = create_source_type_with_http_info(source_type, opts)
       data
@@ -253,7 +253,7 @@ module SourcesApiClient
     # Creates a SourceType object
     # @param source_type SourceType attributes to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<SourceType>, Fixnum, Hash)>] Array<SourceType> data, response status code and response headers
+    # @return [Array<(SourceType, Fixnum, Hash)>] SourceType data, response status code and response headers
     def create_source_type_with_http_info(source_type, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_source_type ...'
@@ -287,7 +287,7 @@ module SourcesApiClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<SourceType>')
+        :return_type => 'SourceType')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#create_source_type\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 
 # **create_application**
-> Array&lt;Application&gt; create_application(application)
+> Application create_application(application)
 
 Create a new Application
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;Application&gt;**](Application.md)
+[**Application**](Application.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 
 # **create_authentication**
-> Array&lt;Authentication&gt; create_authentication(authentication)
+> Authentication create_authentication(authentication)
 
 Create a new Authentication
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;Authentication&gt;**](Authentication.md)
+[**Authentication**](Authentication.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 
 # **create_endpoint**
-> Array&lt;Endpoint&gt; create_endpoint(endpoint)
+> Endpoint create_endpoint(endpoint)
 
 Create a new Endpoint
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;Endpoint&gt;**](Endpoint.md)
+[**Endpoint**](Endpoint.md)
 
 ### Authorization
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 
 # **create_source**
-> Array&lt;Source&gt; create_source(source)
+> Source create_source(source)
 
 Create a new Source
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;Source&gt;**](Source.md)
+[**Source**](Source.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 
 # **create_source_type**
-> Array&lt;SourceType&gt; create_source_type(source_type)
+> SourceType create_source_type(source_type)
 
 Create a new SourceType
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;SourceType&gt;**](SourceType.md)
+[**SourceType**](SourceType.md)
 
 ### Authorization
 
