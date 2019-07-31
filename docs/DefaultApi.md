@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**list_source_type_sources**](DefaultApi.md#list_source_type_sources) | **GET** /source_types/{id}/sources | List Sources for SourceType
 [**list_source_types**](DefaultApi.md#list_source_types) | **GET** /source_types | List SourceTypes
 [**list_sources**](DefaultApi.md#list_sources) | **GET** /sources | List Sources
+[**post_graph_ql**](DefaultApi.md#post_graph_ql) | **POST** /graphql | Perform a GraphQL Query
 [**show_application**](DefaultApi.md#show_application) | **GET** /applications/{id} | Show an existing Application
 [**show_application_type**](DefaultApi.md#show_application_type) | **GET** /application_types/{id} | Show an existing ApplicationType
 [**show_authentication**](DefaultApi.md#show_authentication) | **GET** /authentications/{id} | Show an existing Authentication
@@ -1108,6 +1109,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **post_graph_ql**
+> GraphQLResponse post_graph_ql(opts)
+
+Perform a GraphQL Query
+
+Performs a GraphQL Query
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+opts = {
+  inline_object: SourcesApiClient::InlineObject.new # InlineObject | 
+}
+
+begin
+  #Perform a GraphQL Query
+  result = api_instance.post_graph_ql(opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->post_graph_ql: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object** | [**InlineObject**](InlineObject.md)|  | [optional] 
+
+### Return type
+
+[**GraphQLResponse**](GraphQLResponse.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

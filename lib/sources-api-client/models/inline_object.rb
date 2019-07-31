@@ -13,54 +13,31 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class Source
-    attr_accessor :availability_status
+  class InlineObject
+    # The GraphQL query
+    attr_accessor :query
 
-    attr_accessor :created_at
+    # If the Query contains several named operations, the operationName controls which one should be executed
+    attr_accessor :operation_name
 
-    # ID of the resource
-    attr_accessor :id
-
-    attr_accessor :name
-
-    # ID of the resource
-    attr_accessor :source_type_id
-
-    attr_accessor :tenant
-
-    attr_accessor :uid
-
-    attr_accessor :updated_at
-
-    attr_accessor :version
+    # Optional Query variables
+    attr_accessor :variables
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'availability_status' => :'availability_status',
-        :'created_at' => :'created_at',
-        :'id' => :'id',
-        :'name' => :'name',
-        :'source_type_id' => :'source_type_id',
-        :'tenant' => :'tenant',
-        :'uid' => :'uid',
-        :'updated_at' => :'updated_at',
-        :'version' => :'version'
+        :'query' => :'query',
+        :'operation_name' => :'operationName',
+        :'variables' => :'variables'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'availability_status' => :'String',
-        :'created_at' => :'DateTime',
-        :'id' => :'String',
-        :'name' => :'String',
-        :'source_type_id' => :'String',
-        :'tenant' => :'String',
-        :'uid' => :'String',
-        :'updated_at' => :'DateTime',
-        :'version' => :'String'
+        :'query' => :'String',
+        :'operation_name' => :'String',
+        :'variables' => :'Object'
       }
     end
 
@@ -72,40 +49,18 @@ module SourcesApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'availability_status')
-        self.availability_status = attributes[:'availability_status']
+      if attributes.has_key?(:'query')
+        self.query = attributes[:'query']
+      else
+        self.query = '{}'
       end
 
-      if attributes.has_key?(:'created_at')
-        self.created_at = attributes[:'created_at']
+      if attributes.has_key?(:'operationName')
+        self.operation_name = attributes[:'operationName']
       end
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'source_type_id')
-        self.source_type_id = attributes[:'source_type_id']
-      end
-
-      if attributes.has_key?(:'tenant')
-        self.tenant = attributes[:'tenant']
-      end
-
-      if attributes.has_key?(:'uid')
-        self.uid = attributes[:'uid']
-      end
-
-      if attributes.has_key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
+      if attributes.has_key?(:'variables')
+        self.variables = attributes[:'variables']
       end
     end
 
@@ -113,12 +68,8 @@ module SourcesApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
-        invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
-      end
-
-      if !@source_type_id.nil? && @source_type_id !~ Regexp.new(/^\d+$/)
-        invalid_properties.push('invalid value for "source_type_id", must conform to the pattern /^\d+$/.')
+      if @query.nil?
+        invalid_properties.push('invalid value for "query", query cannot be nil.')
       end
 
       invalid_properties
@@ -127,29 +78,8 @@ module SourcesApiClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
-      return false if !@source_type_id.nil? && @source_type_id !~ Regexp.new(/^\d+$/)
+      return false if @query.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] id Value to be assigned
-    def id=(id)
-      if !id.nil? && id !~ Regexp.new(/^\d+$/)
-        fail ArgumentError, 'invalid value for "id", must conform to the pattern /^\d+$/.'
-      end
-
-      @id = id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] source_type_id Value to be assigned
-    def source_type_id=(source_type_id)
-      if !source_type_id.nil? && source_type_id !~ Regexp.new(/^\d+$/)
-        fail ArgumentError, 'invalid value for "source_type_id", must conform to the pattern /^\d+$/.'
-      end
-
-      @source_type_id = source_type_id
     end
 
     # Checks equality by comparing each attribute.
@@ -157,15 +87,9 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          availability_status == o.availability_status &&
-          created_at == o.created_at &&
-          id == o.id &&
-          name == o.name &&
-          source_type_id == o.source_type_id &&
-          tenant == o.tenant &&
-          uid == o.uid &&
-          updated_at == o.updated_at &&
-          version == o.version
+          query == o.query &&
+          operation_name == o.operation_name &&
+          variables == o.variables
     end
 
     # @see the `==` method
@@ -177,7 +101,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [availability_status, created_at, id, name, source_type_id, tenant, uid, updated_at, version].hash
+      [query, operation_name, variables].hash
     end
 
     # Builds the object from hash

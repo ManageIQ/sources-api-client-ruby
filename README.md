@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 *SourcesApiClient::DefaultApi* | [**list_source_type_sources**](docs/DefaultApi.md#list_source_type_sources) | **GET** /source_types/{id}/sources | List Sources for SourceType
 *SourcesApiClient::DefaultApi* | [**list_source_types**](docs/DefaultApi.md#list_source_types) | **GET** /source_types | List SourceTypes
 *SourcesApiClient::DefaultApi* | [**list_sources**](docs/DefaultApi.md#list_sources) | **GET** /sources | List Sources
+*SourcesApiClient::DefaultApi* | [**post_graph_ql**](docs/DefaultApi.md#post_graph_ql) | **POST** /graphql | Perform a GraphQL Query
 *SourcesApiClient::DefaultApi* | [**show_application**](docs/DefaultApi.md#show_application) | **GET** /applications/{id} | Show an existing Application
 *SourcesApiClient::DefaultApi* | [**show_application_type**](docs/DefaultApi.md#show_application_type) | **GET** /application_types/{id} | Show an existing ApplicationType
 *SourcesApiClient::DefaultApi* | [**show_authentication**](docs/DefaultApi.md#show_authentication) | **GET** /authentications/{id} | Show an existing Authentication
@@ -123,6 +124,8 @@ Class | Method | HTTP request | Description
  - [SourcesApiClient::CollectionMetadata](docs/CollectionMetadata.md)
  - [SourcesApiClient::Endpoint](docs/Endpoint.md)
  - [SourcesApiClient::EndpointsCollection](docs/EndpointsCollection.md)
+ - [SourcesApiClient::GraphQLResponse](docs/GraphQLResponse.md)
+ - [SourcesApiClient::InlineObject](docs/InlineObject.md)
  - [SourcesApiClient::OrderParameters](docs/OrderParameters.md)
  - [SourcesApiClient::Source](docs/Source.md)
  - [SourcesApiClient::SourceType](docs/SourceType.md)

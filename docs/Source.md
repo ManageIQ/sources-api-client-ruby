@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**availability_status** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **name** | **String** |  | [optional] 

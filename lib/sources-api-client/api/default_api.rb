@@ -1272,6 +1272,57 @@ module SourcesApiClient
       return data, status_code, headers
     end
 
+    # Perform a GraphQL Query
+    # Performs a GraphQL Query
+    # @param [Hash] opts the optional parameters
+    # @option opts [InlineObject] :inline_object 
+    # @return [GraphQLResponse]
+    def post_graph_ql(opts = {})
+      data, _status_code, _headers = post_graph_ql_with_http_info(opts)
+      data
+    end
+
+    # Perform a GraphQL Query
+    # Performs a GraphQL Query
+    # @param [Hash] opts the optional parameters
+    # @option opts [InlineObject] :inline_object 
+    # @return [Array<(GraphQLResponse, Fixnum, Hash)>] GraphQLResponse data, response status code and response headers
+    def post_graph_ql_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.post_graph_ql ...'
+      end
+      # resource path
+      local_var_path = '/graphql'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'inline_object'])
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GraphQLResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#post_graph_ql\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show an existing Application
     # Returns a Application object
     # @param id ID of the resource
