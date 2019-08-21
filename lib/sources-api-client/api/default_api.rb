@@ -552,6 +552,84 @@ module SourcesApiClient
       return data, status_code, headers
     end
 
+    # List Sources for ApplicationType
+    # Returns an array of Source objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SourcesCollection]
+    def list_application_type_sources(id, opts = {})
+      data, _status_code, _headers = list_application_type_sources_with_http_info(id, opts)
+      data
+    end
+
+    # List Sources for ApplicationType
+    # Returns an array of Source objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SourcesCollection, Fixnum, Hash)>] SourcesCollection data, response status code and response headers
+    def list_application_type_sources_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_application_type_sources ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_application_type_sources"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_application_type_sources, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_application_type_sources, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_application_type_sources, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_application_type_sources, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/application_types/{id}/sources'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SourcesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_application_type_sources\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ApplicationTypes
     # Returns an array of ApplicationType objects
     # @param [Hash] opts the optional parameters
@@ -898,6 +976,84 @@ module SourcesApiClient
         :return_type => 'EndpointsCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_endpoints\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ApplicationTypes for Source
+    # Returns an array of ApplicationType objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ApplicationTypesCollection]
+    def list_source_application_types(id, opts = {})
+      data, _status_code, _headers = list_source_application_types_with_http_info(id, opts)
+      data
+    end
+
+    # List ApplicationTypes for Source
+    # Returns an array of ApplicationType objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ApplicationTypesCollection, Fixnum, Hash)>] ApplicationTypesCollection data, response status code and response headers
+    def list_source_application_types_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_application_types ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_application_types"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_application_types, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_application_types, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_application_types, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_application_types, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/application_types'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ApplicationTypesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_application_types\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1268,6 +1424,57 @@ module SourcesApiClient
         :return_type => 'SourcesCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_sources\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Perform a GraphQL Query
+    # Performs a GraphQL Query
+    # @param [Hash] opts the optional parameters
+    # @option opts [InlineObject] :inline_object 
+    # @return [GraphQLResponse]
+    def post_graph_ql(opts = {})
+      data, _status_code, _headers = post_graph_ql_with_http_info(opts)
+      data
+    end
+
+    # Perform a GraphQL Query
+    # Performs a GraphQL Query
+    # @param [Hash] opts the optional parameters
+    # @option opts [InlineObject] :inline_object 
+    # @return [Array<(GraphQLResponse, Fixnum, Hash)>] GraphQLResponse data, response status code and response headers
+    def post_graph_ql_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.post_graph_ql ...'
+      end
+      # resource path
+      local_var_path = '/graphql'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'inline_object'])
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GraphQLResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#post_graph_ql\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

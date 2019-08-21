@@ -13,28 +13,31 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class CollectionMetadata
-    attr_accessor :count
+  class InlineObject
+    # The GraphQL query
+    attr_accessor :query
 
-    attr_accessor :limit
+    # If the Query contains several named operations, the operationName controls which one should be executed
+    attr_accessor :operation_name
 
-    attr_accessor :offset
+    # Optional Query variables
+    attr_accessor :variables
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'limit' => :'limit',
-        :'offset' => :'offset'
+        :'query' => :'query',
+        :'operation_name' => :'operationName',
+        :'variables' => :'variables'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'count' => :'Integer',
-        :'limit' => :'Integer',
-        :'offset' => :'Integer'
+        :'query' => :'String',
+        :'operation_name' => :'String',
+        :'variables' => :'Object'
       }
     end
 
@@ -46,16 +49,18 @@ module SourcesApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.has_key?(:'query')
+        self.query = attributes[:'query']
+      else
+        self.query = '{}'
       end
 
-      if attributes.has_key?(:'limit')
-        self.limit = attributes[:'limit']
+      if attributes.has_key?(:'operationName')
+        self.operation_name = attributes[:'operationName']
       end
 
-      if attributes.has_key?(:'offset')
-        self.offset = attributes[:'offset']
+      if attributes.has_key?(:'variables')
+        self.variables = attributes[:'variables']
       end
     end
 
@@ -63,12 +68,17 @@ module SourcesApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @query.nil?
+        invalid_properties.push('invalid value for "query", query cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @query.nil?
       true
     end
 
@@ -77,9 +87,9 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          limit == o.limit &&
-          offset == o.offset
+          query == o.query &&
+          operation_name == o.operation_name &&
+          variables == o.variables
     end
 
     # @see the `==` method
@@ -91,7 +101,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, limit, offset].hash
+      [query, operation_name, variables].hash
     end
 
     # Builds the object from hash

@@ -13,28 +13,26 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class CollectionMetadata
-    attr_accessor :count
+  class GraphQLResponse
+    # Results from the GraphQL query
+    attr_accessor :data
 
-    attr_accessor :limit
-
-    attr_accessor :offset
+    # Errors resulting from the GraphQL query
+    attr_accessor :errors
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'limit' => :'limit',
-        :'offset' => :'offset'
+        :'data' => :'data',
+        :'errors' => :'errors'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'count' => :'Integer',
-        :'limit' => :'Integer',
-        :'offset' => :'Integer'
+        :'data' => :'Object',
+        :'errors' => :'Array<Object>'
       }
     end
 
@@ -46,16 +44,14 @@ module SourcesApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.has_key?(:'data')
+        self.data = attributes[:'data']
       end
 
-      if attributes.has_key?(:'limit')
-        self.limit = attributes[:'limit']
-      end
-
-      if attributes.has_key?(:'offset')
-        self.offset = attributes[:'offset']
+      if attributes.has_key?(:'errors')
+        if (value = attributes[:'errors']).is_a?(Array)
+          self.errors = value
+        end
       end
     end
 
@@ -77,9 +73,8 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          limit == o.limit &&
-          offset == o.offset
+          data == o.data &&
+          errors == o.errors
     end
 
     # @see the `==` method
@@ -91,7 +86,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, limit, offset].hash
+      [data, errors].hash
     end
 
     # Builds the object from hash
