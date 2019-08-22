@@ -16,6 +16,8 @@ module SourcesApiClient
   class Authentication
     attr_accessor :authtype
 
+    attr_accessor :extra
+
     # ID of the resource
     attr_accessor :id
 
@@ -40,6 +42,7 @@ module SourcesApiClient
     def self.attribute_map
       {
         :'authtype' => :'authtype',
+        :'extra' => :'extra',
         :'id' => :'id',
         :'name' => :'name',
         :'password' => :'password',
@@ -56,6 +59,7 @@ module SourcesApiClient
     def self.openapi_types
       {
         :'authtype' => :'String',
+        :'extra' => :'AuthenticationExtra',
         :'id' => :'String',
         :'name' => :'String',
         :'password' => :'String',
@@ -78,6 +82,10 @@ module SourcesApiClient
 
       if attributes.has_key?(:'authtype')
         self.authtype = attributes[:'authtype']
+      end
+
+      if attributes.has_key?(:'extra')
+        self.extra = attributes[:'extra']
       end
 
       if attributes.has_key?(:'id')
@@ -166,6 +174,7 @@ module SourcesApiClient
       return true if self.equal?(o)
       self.class == o.class &&
           authtype == o.authtype &&
+          extra == o.extra &&
           id == o.id &&
           name == o.name &&
           password == o.password &&
@@ -186,7 +195,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authtype, id, name, password, resource_id, resource_type, status, status_details, tenant, username].hash
+      [authtype, extra, id, name, password, resource_id, resource_type, status, status_details, tenant, username].hash
     end
 
     # Builds the object from hash

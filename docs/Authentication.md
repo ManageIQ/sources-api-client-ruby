@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authtype** | **String** |  | [optional] 
+**extra** | [**AuthenticationExtra**](AuthenticationExtra.md) |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **name** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 

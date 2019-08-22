@@ -90,16 +90,19 @@ Class | Method | HTTP request | Description
 *SourcesApiClient::DefaultApi* | [**delete_endpoint**](docs/DefaultApi.md#delete_endpoint) | **DELETE** /endpoints/{id} | Delete an existing Endpoint
 *SourcesApiClient::DefaultApi* | [**delete_source**](docs/DefaultApi.md#delete_source) | **DELETE** /sources/{id} | Delete an existing Source
 *SourcesApiClient::DefaultApi* | [**get_documentation**](docs/DefaultApi.md#get_documentation) | **GET** /openapi.json | Return this API document in JSON format
+*SourcesApiClient::DefaultApi* | [**list_application_type_sources**](docs/DefaultApi.md#list_application_type_sources) | **GET** /application_types/{id}/sources | List Sources for ApplicationType
 *SourcesApiClient::DefaultApi* | [**list_application_types**](docs/DefaultApi.md#list_application_types) | **GET** /application_types | List ApplicationTypes
 *SourcesApiClient::DefaultApi* | [**list_applications**](docs/DefaultApi.md#list_applications) | **GET** /applications | List Applications
 *SourcesApiClient::DefaultApi* | [**list_authentications**](docs/DefaultApi.md#list_authentications) | **GET** /authentications | List Authentications
 *SourcesApiClient::DefaultApi* | [**list_endpoint_authentications**](docs/DefaultApi.md#list_endpoint_authentications) | **GET** /endpoints/{id}/authentications | List Authentications for Endpoint
 *SourcesApiClient::DefaultApi* | [**list_endpoints**](docs/DefaultApi.md#list_endpoints) | **GET** /endpoints | List Endpoints
+*SourcesApiClient::DefaultApi* | [**list_source_application_types**](docs/DefaultApi.md#list_source_application_types) | **GET** /sources/{id}/application_types | List ApplicationTypes for Source
 *SourcesApiClient::DefaultApi* | [**list_source_applications**](docs/DefaultApi.md#list_source_applications) | **GET** /sources/{id}/applications | List Applications for Source
 *SourcesApiClient::DefaultApi* | [**list_source_endpoints**](docs/DefaultApi.md#list_source_endpoints) | **GET** /sources/{id}/endpoints | List Endpoints for Source
 *SourcesApiClient::DefaultApi* | [**list_source_type_sources**](docs/DefaultApi.md#list_source_type_sources) | **GET** /source_types/{id}/sources | List Sources for SourceType
 *SourcesApiClient::DefaultApi* | [**list_source_types**](docs/DefaultApi.md#list_source_types) | **GET** /source_types | List SourceTypes
 *SourcesApiClient::DefaultApi* | [**list_sources**](docs/DefaultApi.md#list_sources) | **GET** /sources | List Sources
+*SourcesApiClient::DefaultApi* | [**post_graph_ql**](docs/DefaultApi.md#post_graph_ql) | **POST** /graphql | Perform a GraphQL Query
 *SourcesApiClient::DefaultApi* | [**show_application**](docs/DefaultApi.md#show_application) | **GET** /applications/{id} | Show an existing Application
 *SourcesApiClient::DefaultApi* | [**show_application_type**](docs/DefaultApi.md#show_application_type) | **GET** /application_types/{id} | Show an existing ApplicationType
 *SourcesApiClient::DefaultApi* | [**show_authentication**](docs/DefaultApi.md#show_authentication) | **GET** /authentications/{id} | Show an existing Authentication
@@ -118,11 +121,15 @@ Class | Method | HTTP request | Description
  - [SourcesApiClient::ApplicationTypesCollection](docs/ApplicationTypesCollection.md)
  - [SourcesApiClient::ApplicationsCollection](docs/ApplicationsCollection.md)
  - [SourcesApiClient::Authentication](docs/Authentication.md)
+ - [SourcesApiClient::AuthenticationExtra](docs/AuthenticationExtra.md)
+ - [SourcesApiClient::AuthenticationExtraAzure](docs/AuthenticationExtraAzure.md)
  - [SourcesApiClient::AuthenticationsCollection](docs/AuthenticationsCollection.md)
  - [SourcesApiClient::CollectionLinks](docs/CollectionLinks.md)
  - [SourcesApiClient::CollectionMetadata](docs/CollectionMetadata.md)
  - [SourcesApiClient::Endpoint](docs/Endpoint.md)
  - [SourcesApiClient::EndpointsCollection](docs/EndpointsCollection.md)
+ - [SourcesApiClient::GraphQLResponse](docs/GraphQLResponse.md)
+ - [SourcesApiClient::InlineObject](docs/InlineObject.md)
  - [SourcesApiClient::OrderParameters](docs/OrderParameters.md)
  - [SourcesApiClient::Source](docs/Source.md)
  - [SourcesApiClient::SourceType](docs/SourceType.md)

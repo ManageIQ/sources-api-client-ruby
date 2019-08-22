@@ -13,28 +13,20 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module SourcesApiClient
-  class CollectionMetadata
-    attr_accessor :count
-
-    attr_accessor :limit
-
-    attr_accessor :offset
+  class AuthenticationExtra
+    attr_accessor :azure
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'limit' => :'limit',
-        :'offset' => :'offset'
+        :'azure' => :'azure'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'count' => :'Integer',
-        :'limit' => :'Integer',
-        :'offset' => :'Integer'
+        :'azure' => :'AuthenticationExtraAzure'
       }
     end
 
@@ -46,16 +38,8 @@ module SourcesApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
-      end
-
-      if attributes.has_key?(:'limit')
-        self.limit = attributes[:'limit']
-      end
-
-      if attributes.has_key?(:'offset')
-        self.offset = attributes[:'offset']
+      if attributes.has_key?(:'azure')
+        self.azure = attributes[:'azure']
       end
     end
 
@@ -77,9 +61,7 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          limit == o.limit &&
-          offset == o.offset
+          azure == o.azure
     end
 
     # @see the `==` method
@@ -91,7 +73,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, limit, offset].hash
+      [azure].hash
     end
 
     # Builds the object from hash

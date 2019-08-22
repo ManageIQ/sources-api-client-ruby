@@ -14,16 +14,19 @@ Method | HTTP request | Description
 [**delete_endpoint**](DefaultApi.md#delete_endpoint) | **DELETE** /endpoints/{id} | Delete an existing Endpoint
 [**delete_source**](DefaultApi.md#delete_source) | **DELETE** /sources/{id} | Delete an existing Source
 [**get_documentation**](DefaultApi.md#get_documentation) | **GET** /openapi.json | Return this API document in JSON format
+[**list_application_type_sources**](DefaultApi.md#list_application_type_sources) | **GET** /application_types/{id}/sources | List Sources for ApplicationType
 [**list_application_types**](DefaultApi.md#list_application_types) | **GET** /application_types | List ApplicationTypes
 [**list_applications**](DefaultApi.md#list_applications) | **GET** /applications | List Applications
 [**list_authentications**](DefaultApi.md#list_authentications) | **GET** /authentications | List Authentications
 [**list_endpoint_authentications**](DefaultApi.md#list_endpoint_authentications) | **GET** /endpoints/{id}/authentications | List Authentications for Endpoint
 [**list_endpoints**](DefaultApi.md#list_endpoints) | **GET** /endpoints | List Endpoints
+[**list_source_application_types**](DefaultApi.md#list_source_application_types) | **GET** /sources/{id}/application_types | List ApplicationTypes for Source
 [**list_source_applications**](DefaultApi.md#list_source_applications) | **GET** /sources/{id}/applications | List Applications for Source
 [**list_source_endpoints**](DefaultApi.md#list_source_endpoints) | **GET** /sources/{id}/endpoints | List Endpoints for Source
 [**list_source_type_sources**](DefaultApi.md#list_source_type_sources) | **GET** /source_types/{id}/sources | List Sources for SourceType
 [**list_source_types**](DefaultApi.md#list_source_types) | **GET** /source_types | List SourceTypes
 [**list_sources**](DefaultApi.md#list_sources) | **GET** /sources | List Sources
+[**post_graph_ql**](DefaultApi.md#post_graph_ql) | **POST** /graphql | Perform a GraphQL Query
 [**show_application**](DefaultApi.md#show_application) | **GET** /applications/{id} | Show an existing Application
 [**show_application_type**](DefaultApi.md#show_application_type) | **GET** /application_types/{id} | Show an existing ApplicationType
 [**show_authentication**](DefaultApi.md#show_authentication) | **GET** /authentications/{id} | Show an existing Authentication
@@ -534,6 +537,65 @@ nil (empty response body)
 
 
 
+# **list_application_type_sources**
+> SourcesCollection list_application_type_sources(id, opts)
+
+List Sources for ApplicationType
+
+Returns an array of Source objects
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Sources for ApplicationType
+  result = api_instance.list_application_type_sources(id, opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_application_type_sources: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SourcesCollection**](SourcesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **list_application_types**
 > ApplicationTypesCollection list_application_types(opts)
 
@@ -809,6 +871,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EndpointsCollection**](EndpointsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_application_types**
+> ApplicationTypesCollection list_source_application_types(id, opts)
+
+List ApplicationTypes for Source
+
+Returns an array of ApplicationType objects
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ApplicationTypes for Source
+  result = api_instance.list_source_application_types(id, opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_application_types: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ApplicationTypesCollection**](ApplicationTypesCollection.md)
 
 ### Authorization
 
@@ -1108,6 +1229,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **post_graph_ql**
+> GraphQLResponse post_graph_ql(opts)
+
+Perform a GraphQL Query
+
+Performs a GraphQL Query
+
+### Example
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+opts = {
+  inline_object: SourcesApiClient::InlineObject.new # InlineObject | 
+}
+
+begin
+  #Perform a GraphQL Query
+  result = api_instance.post_graph_ql(opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->post_graph_ql: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object** | [**InlineObject**](InlineObject.md)|  | [optional] 
+
+### Return type
+
+[**GraphQLResponse**](GraphQLResponse.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
