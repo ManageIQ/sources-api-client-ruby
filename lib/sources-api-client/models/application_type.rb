@@ -16,6 +16,8 @@ module SourcesApiClient
   class ApplicationType
     attr_accessor :created_at
 
+    attr_accessor :dependent_applications
+
     attr_accessor :display_name
 
     # ID of the resource
@@ -23,15 +25,22 @@ module SourcesApiClient
 
     attr_accessor :name
 
+    attr_accessor :supported_authentication_types
+
+    attr_accessor :supported_source_types
+
     attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'created_at' => :'created_at',
+        :'dependent_applications' => :'dependent_applications',
         :'display_name' => :'display_name',
         :'id' => :'id',
         :'name' => :'name',
+        :'supported_authentication_types' => :'supported_authentication_types',
+        :'supported_source_types' => :'supported_source_types',
         :'updated_at' => :'updated_at'
       }
     end
@@ -40,9 +49,12 @@ module SourcesApiClient
     def self.openapi_types
       {
         :'created_at' => :'DateTime',
+        :'dependent_applications' => :'Object',
         :'display_name' => :'String',
         :'id' => :'String',
         :'name' => :'String',
+        :'supported_authentication_types' => :'Object',
+        :'supported_source_types' => :'Object',
         :'updated_at' => :'DateTime'
       }
     end
@@ -59,6 +71,10 @@ module SourcesApiClient
         self.created_at = attributes[:'created_at']
       end
 
+      if attributes.has_key?(:'dependent_applications')
+        self.dependent_applications = attributes[:'dependent_applications']
+      end
+
       if attributes.has_key?(:'display_name')
         self.display_name = attributes[:'display_name']
       end
@@ -69,6 +85,14 @@ module SourcesApiClient
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'supported_authentication_types')
+        self.supported_authentication_types = attributes[:'supported_authentication_types']
+      end
+
+      if attributes.has_key?(:'supported_source_types')
+        self.supported_source_types = attributes[:'supported_source_types']
       end
 
       if attributes.has_key?(:'updated_at')
@@ -110,9 +134,12 @@ module SourcesApiClient
       return true if self.equal?(o)
       self.class == o.class &&
           created_at == o.created_at &&
+          dependent_applications == o.dependent_applications &&
           display_name == o.display_name &&
           id == o.id &&
           name == o.name &&
+          supported_authentication_types == o.supported_authentication_types &&
+          supported_source_types == o.supported_source_types &&
           updated_at == o.updated_at
     end
 
@@ -125,7 +152,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created_at, display_name, id, name, updated_at].hash
+      [created_at, dependent_applications, display_name, id, name, supported_authentication_types, supported_source_types, updated_at].hash
     end
 
     # Builds the object from hash
