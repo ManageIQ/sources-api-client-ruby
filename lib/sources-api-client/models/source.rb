@@ -14,6 +14,8 @@ require 'date'
 
 module SourcesApiClient
   class Source
+    attr_accessor :availability_status
+
     attr_accessor :created_at
 
     # ID of the resource
@@ -35,6 +37,7 @@ module SourcesApiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'availability_status' => :'availability_status',
         :'created_at' => :'created_at',
         :'id' => :'id',
         :'name' => :'name',
@@ -49,6 +52,7 @@ module SourcesApiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'availability_status' => :'String',
         :'created_at' => :'DateTime',
         :'id' => :'String',
         :'name' => :'String',
@@ -67,6 +71,10 @@ module SourcesApiClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'availability_status')
+        self.availability_status = attributes[:'availability_status']
+      end
 
       if attributes.has_key?(:'created_at')
         self.created_at = attributes[:'created_at']
@@ -149,6 +157,7 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          availability_status == o.availability_status &&
           created_at == o.created_at &&
           id == o.id &&
           name == o.name &&
@@ -168,7 +177,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created_at, id, name, source_type_id, tenant, uid, updated_at, version].hash
+      [availability_status, created_at, id, name, source_type_id, tenant, uid, updated_at, version].hash
     end
 
     # Builds the object from hash
