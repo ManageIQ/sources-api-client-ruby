@@ -1,6 +1,7 @@
 # SourcesApiClient::Authentication
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authtype** | **String** |  | [optional] 
@@ -14,5 +15,23 @@ Name | Type | Description | Notes
 **status_details** | **String** |  | [optional] 
 **tenant** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'SourcesApiClient'
+
+instance = SourcesApiClient::Authentication.new(authtype: openshift_default,
+                                 extra: null,
+                                 id: null,
+                                 name: OpenShift default,
+                                 password: null,
+                                 resource_id: null,
+                                 resource_type: Endpoint,
+                                 status: valid,
+                                 status_details: null,
+                                 tenant: null,
+                                 username: user@example.com)
+```
 
 
