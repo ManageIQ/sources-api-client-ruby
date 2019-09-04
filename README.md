@@ -25,6 +25,7 @@ Then either install the gem locally:
 ```shell
 gem install ./sources-api-client-1.0.0.gem
 ```
+
 (for development, run `gem install --dev ./sources-api-client-1.0.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
@@ -50,6 +51,7 @@ ruby -Ilib script.rb
 ## Getting Started
 
 Please follow the [installation](#installation) procedure and then run the following code:
+
 ```ruby
 # Load the gem
 require 'sources-api-client'
@@ -57,8 +59,8 @@ require 'sources-api-client'
 # Setup authorization
 SourcesApiClient.configure do |config|
   # Configure HTTP basic authorization: UserSecurity
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'YOUR_USERNAME'
+  config.password = 'YOUR_PASSWORD'
 end
 
 api_instance = SourcesApiClient::DefaultApi.new

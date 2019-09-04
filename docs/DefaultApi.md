@@ -38,7 +38,9 @@ Method | HTTP request | Description
 [**update_source**](DefaultApi.md#update_source) | **PATCH** /sources/{id} | Update an existing Source
 
 
-# **create_application**
+
+## create_application
+
 > Application create_application(application)
 
 Create a new Application
@@ -46,6 +48,7 @@ Create a new Application
 Creates a Application object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -70,6 +73,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **application** | [**Application**](Application.md)| Application attributes to create | 
@@ -84,12 +88,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## create_authentication
 
-# **create_authentication**
 > Authentication create_authentication(authentication)
 
 Create a new Authentication
@@ -97,6 +101,7 @@ Create a new Authentication
 Creates a Authentication object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -121,6 +126,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authentication** | [**Authentication**](Authentication.md)| Authentication attributes to create | 
@@ -135,12 +141,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## create_endpoint
 
-# **create_endpoint**
 > Endpoint create_endpoint(endpoint)
 
 Create a new Endpoint
@@ -148,6 +154,7 @@ Create a new Endpoint
 Creates a Endpoint object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -172,6 +179,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint** | [**Endpoint**](Endpoint.md)| Endpoint attributes to create | 
@@ -186,12 +194,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## create_source
 
-# **create_source**
 > Source create_source(source)
 
 Create a new Source
@@ -199,6 +207,7 @@ Create a new Source
 Creates a Source object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -223,6 +232,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source** | [**Source**](Source.md)| Source attributes to create | 
@@ -237,12 +247,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## create_source_type
 
-# **create_source_type**
 > SourceType create_source_type(source_type)
 
 Create a new SourceType
@@ -250,6 +260,7 @@ Create a new SourceType
 Creates a SourceType object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -274,6 +285,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_type** | [**SourceType**](SourceType.md)| SourceType attributes to create | 
@@ -288,12 +300,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_application
 
-# **delete_application**
 > delete_application(id)
 
 Delete an existing Application
@@ -301,6 +313,7 @@ Delete an existing Application
 Deletes a Application object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -324,6 +337,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -338,12 +352,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## delete_authentication
 
-# **delete_authentication**
 > delete_authentication(id)
 
 Delete an existing Authentication
@@ -351,6 +365,7 @@ Delete an existing Authentication
 Deletes a Authentication object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -374,6 +389,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -388,12 +404,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## delete_endpoint
 
-# **delete_endpoint**
 > delete_endpoint(id)
 
 Delete an existing Endpoint
@@ -401,6 +417,7 @@ Delete an existing Endpoint
 Deletes a Endpoint object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -424,6 +441,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -438,12 +456,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## delete_source
 
-# **delete_source**
 > delete_source(id)
 
 Delete an existing Source
@@ -451,6 +469,7 @@ Delete an existing Source
 Deletes a Source object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -474,6 +493,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -488,17 +508,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## get_documentation
 
-# **get_documentation**
 > get_documentation
 
 Return this API document in JSON format
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -520,6 +541,7 @@ end
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -532,12 +554,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## list_application_type_sources
 
-# **list_application_type_sources**
 > SourcesCollection list_application_type_sources(id, opts)
 
 List Sources for ApplicationType
@@ -545,6 +567,7 @@ List Sources for ApplicationType
 Returns an array of Source objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -574,6 +597,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -591,12 +615,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_application_types
 
-# **list_application_types**
 > ApplicationTypesCollection list_application_types(opts)
 
 List ApplicationTypes
@@ -604,6 +628,7 @@ List ApplicationTypes
 Returns an array of ApplicationType objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -632,6 +657,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -648,12 +674,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_applications
 
-# **list_applications**
 > ApplicationsCollection list_applications(opts)
 
 List Applications
@@ -661,6 +687,7 @@ List Applications
 Returns an array of Application objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -689,6 +716,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -705,12 +733,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_authentications
 
-# **list_authentications**
 > AuthenticationsCollection list_authentications(opts)
 
 List Authentications
@@ -718,6 +746,7 @@ List Authentications
 Returns an array of Authentication objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -746,6 +775,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -762,12 +792,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_endpoint_authentications
 
-# **list_endpoint_authentications**
 > AuthenticationsCollection list_endpoint_authentications(id, opts)
 
 List Authentications for Endpoint
@@ -775,6 +805,7 @@ List Authentications for Endpoint
 Returns an array of Authentication objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -804,6 +835,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -821,12 +853,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_endpoints
 
-# **list_endpoints**
 > EndpointsCollection list_endpoints(opts)
 
 List Endpoints
@@ -834,6 +866,7 @@ List Endpoints
 Returns an array of Endpoint objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -862,6 +895,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -878,12 +912,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_application_types
 
-# **list_source_application_types**
 > ApplicationTypesCollection list_source_application_types(id, opts)
 
 List ApplicationTypes for Source
@@ -891,6 +925,7 @@ List ApplicationTypes for Source
 Returns an array of ApplicationType objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -920,6 +955,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -937,12 +973,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_applications
 
-# **list_source_applications**
 > ApplicationsCollection list_source_applications(id, opts)
 
 List Applications for Source
@@ -950,6 +986,7 @@ List Applications for Source
 Returns an array of Application objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -979,6 +1016,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -996,12 +1034,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_endpoints
 
-# **list_source_endpoints**
 > EndpointsCollection list_source_endpoints(id, opts)
 
 List Endpoints for Source
@@ -1009,6 +1047,7 @@ List Endpoints for Source
 Returns an array of Endpoint objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1038,6 +1077,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1055,12 +1095,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_type_sources
 
-# **list_source_type_sources**
 > SourcesCollection list_source_type_sources(id, opts)
 
 List Sources for SourceType
@@ -1068,6 +1108,7 @@ List Sources for SourceType
 Returns an array of Source objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1097,6 +1138,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1114,12 +1156,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_types
 
-# **list_source_types**
 > SourceTypesCollection list_source_types(opts)
 
 List SourceTypes
@@ -1127,6 +1169,7 @@ List SourceTypes
 Returns an array of SourceType objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1155,6 +1198,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1171,12 +1215,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_sources
 
-# **list_sources**
 > SourcesCollection list_sources(opts)
 
 List Sources
@@ -1184,6 +1228,7 @@ List Sources
 Returns an array of Source objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1212,6 +1257,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1228,19 +1274,20 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## post_graph_ql
 
-# **post_graph_ql**
-> GraphQLResponse post_graph_ql(opts)
+> GraphQLResponse post_graph_ql(inline_object)
 
 Perform a GraphQL Query
 
 Performs a GraphQL Query
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1252,13 +1299,11 @@ SourcesApiClient.configure do |config|
 end
 
 api_instance = SourcesApiClient::DefaultApi.new
-opts = {
-  inline_object: SourcesApiClient::InlineObject.new # InlineObject | 
-}
+inline_object = SourcesApiClient::InlineObject.new # InlineObject | 
 
 begin
   #Perform a GraphQL Query
-  result = api_instance.post_graph_ql(opts)
+  result = api_instance.post_graph_ql(inline_object)
   p result
 rescue SourcesApiClient::ApiError => e
   puts "Exception when calling DefaultApi->post_graph_ql: #{e}"
@@ -1267,9 +1312,10 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object** | [**InlineObject**](InlineObject.md)|  | [optional] 
+ **inline_object** | [**InlineObject**](InlineObject.md)|  | 
 
 ### Return type
 
@@ -1281,12 +1327,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## show_application
 
-# **show_application**
 > Application show_application(id)
 
 Show an existing Application
@@ -1294,6 +1340,7 @@ Show an existing Application
 Returns a Application object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1318,6 +1365,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1332,12 +1380,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_application_type
 
-# **show_application_type**
 > ApplicationType show_application_type(id)
 
 Show an existing ApplicationType
@@ -1345,6 +1393,7 @@ Show an existing ApplicationType
 Returns a ApplicationType object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1369,6 +1418,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1383,12 +1433,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_authentication
 
-# **show_authentication**
 > Authentication show_authentication(id)
 
 Show an existing Authentication
@@ -1396,6 +1446,7 @@ Show an existing Authentication
 Returns a Authentication object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1420,6 +1471,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1434,12 +1486,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_endpoint
 
-# **show_endpoint**
 > Endpoint show_endpoint(id)
 
 Show an existing Endpoint
@@ -1447,6 +1499,7 @@ Show an existing Endpoint
 Returns a Endpoint object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1471,6 +1524,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1485,12 +1539,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_source
 
-# **show_source**
 > Source show_source(id)
 
 Show an existing Source
@@ -1498,6 +1552,7 @@ Show an existing Source
 Returns a Source object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1522,6 +1577,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1536,12 +1592,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_source_type
 
-# **show_source_type**
 > SourceType show_source_type(id)
 
 Show an existing SourceType
@@ -1549,6 +1605,7 @@ Show an existing SourceType
 Returns a SourceType object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1573,6 +1630,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1587,12 +1645,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_authentication
 
-# **update_authentication**
 > update_authentication(id, authentication)
 
 Update an existing Authentication
@@ -1600,6 +1658,7 @@ Update an existing Authentication
 Updates a Authentication object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1624,6 +1683,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1639,12 +1699,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 
+## update_endpoint
 
-# **update_endpoint**
 > update_endpoint(id, endpoint)
 
 Update an existing Endpoint
@@ -1652,6 +1712,7 @@ Update an existing Endpoint
 Updates a Endpoint object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1676,6 +1737,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1691,12 +1753,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 
+## update_source
 
-# **update_source**
 > update_source(id, source)
 
 Update an existing Source
@@ -1704,6 +1766,7 @@ Update an existing Source
 Updates a Source object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sources-api-client'
@@ -1728,6 +1791,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1743,8 +1807,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
