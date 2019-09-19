@@ -16,6 +16,8 @@ module SourcesApiClient
   class SourceType
     attr_accessor :created_at
 
+    attr_accessor :icon_url
+
     # ID of the resource
     attr_accessor :id
 
@@ -33,6 +35,7 @@ module SourcesApiClient
     def self.attribute_map
       {
         :'created_at' => :'created_at',
+        :'icon_url' => :'icon_url',
         :'id' => :'id',
         :'name' => :'name',
         :'product_name' => :'product_name',
@@ -46,6 +49,7 @@ module SourcesApiClient
     def self.openapi_types
       {
         :'created_at' => :'DateTime',
+        :'icon_url' => :'String',
         :'id' => :'String',
         :'name' => :'String',
         :'product_name' => :'String',
@@ -72,6 +76,10 @@ module SourcesApiClient
 
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'icon_url')
+        self.icon_url = attributes[:'icon_url']
       end
 
       if attributes.key?(:'id')
@@ -135,6 +143,7 @@ module SourcesApiClient
       return true if self.equal?(o)
       self.class == o.class &&
           created_at == o.created_at &&
+          icon_url == o.icon_url &&
           id == o.id &&
           name == o.name &&
           product_name == o.product_name &&
@@ -152,7 +161,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [created_at, id, name, product_name, schema, updated_at, vendor].hash
+      [created_at, icon_url, id, name, product_name, schema, updated_at, vendor].hash
     end
 
     # Builds the object from hash

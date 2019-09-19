@@ -33,6 +33,9 @@ module SourcesApiClient
     # URI port component
     attr_accessor :port
 
+    # Identifier of a receptor node
+    attr_accessor :receptor_node
+
     attr_accessor :role
 
     # URI scheme component
@@ -58,6 +61,7 @@ module SourcesApiClient
         :'id' => :'id',
         :'path' => :'path',
         :'port' => :'port',
+        :'receptor_node' => :'receptor_node',
         :'role' => :'role',
         :'scheme' => :'scheme',
         :'source_id' => :'source_id',
@@ -77,6 +81,7 @@ module SourcesApiClient
         :'id' => :'String',
         :'path' => :'String',
         :'port' => :'Integer',
+        :'receptor_node' => :'String',
         :'role' => :'String',
         :'scheme' => :'String',
         :'source_id' => :'String',
@@ -127,6 +132,10 @@ module SourcesApiClient
 
       if attributes.key?(:'port')
         self.port = attributes[:'port']
+      end
+
+      if attributes.key?(:'receptor_node')
+        self.receptor_node = attributes[:'receptor_node']
       end
 
       if attributes.key?(:'role')
@@ -213,6 +222,7 @@ module SourcesApiClient
           id == o.id &&
           path == o.path &&
           port == o.port &&
+          receptor_node == o.receptor_node &&
           role == o.role &&
           scheme == o.scheme &&
           source_id == o.source_id &&
@@ -230,7 +240,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [certificate_authority, created_at, default, host, id, path, port, role, scheme, source_id, tenant, updated_at, verify_ssl].hash
+      [certificate_authority, created_at, default, host, id, path, port, receptor_node, role, scheme, source_id, tenant, updated_at, verify_ssl].hash
     end
 
     # Builds the object from hash

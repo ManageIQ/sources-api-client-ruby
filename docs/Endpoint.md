@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **String** | ID of the resource | [optional] 
 **path** | **String** | URI path component | [optional] 
 **port** | **Integer** | URI port component | [optional] 
+**receptor_node** | **String** | Identifier of a receptor node | [optional] 
 **role** | **String** |  | [optional] 
 **scheme** | **String** | URI scheme component | [optional] 
 **source_id** | **String** | ID of the resource | [optional] 
@@ -30,6 +31,7 @@ instance = SourcesApiClient::Endpoint.new(certificate_authority: null,
                                  id: null,
                                  path: /api/v1,
                                  port: 80,
+                                 receptor_node: null,
                                  role: default,
                                  scheme: https,
                                  source_id: null,
