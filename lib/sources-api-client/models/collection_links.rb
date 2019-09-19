@@ -18,17 +18,17 @@ module SourcesApiClient
 
     attr_accessor :last
 
-    attr_accessor :prev
-
     attr_accessor :_next
+
+    attr_accessor :prev
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'first' => :'first',
         :'last' => :'last',
-        :'prev' => :'prev',
-        :'_next' => :'next'
+        :'_next' => :'next',
+        :'prev' => :'prev'
       }
     end
 
@@ -37,8 +37,8 @@ module SourcesApiClient
       {
         :'first' => :'String',
         :'last' => :'String',
-        :'prev' => :'String',
-        :'_next' => :'String'
+        :'_next' => :'String',
+        :'prev' => :'String'
       }
     end
 
@@ -65,12 +65,12 @@ module SourcesApiClient
         self.last = attributes[:'last']
       end
 
-      if attributes.key?(:'prev')
-        self.prev = attributes[:'prev']
-      end
-
       if attributes.key?(:'_next')
         self._next = attributes[:'_next']
+      end
+
+      if attributes.key?(:'prev')
+        self.prev = attributes[:'prev']
       end
     end
 
@@ -94,8 +94,8 @@ module SourcesApiClient
       self.class == o.class &&
           first == o.first &&
           last == o.last &&
-          prev == o.prev &&
-          _next == o._next
+          _next == o._next &&
+          prev == o.prev
     end
 
     # @see the `==` method
@@ -107,7 +107,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [first, last, prev, _next].hash
+      [first, last, _next, prev].hash
     end
 
     # Builds the object from hash

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **DateTime** |  | [optional] 
+**icon_url** | **String** |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **name** | **String** |  | [optional] 
 **product_name** | **String** |  | [optional] 
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 require 'SourcesApiClient'
 
 instance = SourcesApiClient::SourceType.new(created_at: null,
+                                 icon_url: null,
                                  id: null,
                                  name: openshift,
                                  product_name: OpenShift,

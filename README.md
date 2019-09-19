@@ -132,12 +132,10 @@ Class | Method | HTTP request | Description
  - [SourcesApiClient::EndpointsCollection](docs/EndpointsCollection.md)
  - [SourcesApiClient::GraphQLResponse](docs/GraphQLResponse.md)
  - [SourcesApiClient::InlineObject](docs/InlineObject.md)
- - [SourcesApiClient::OrderParameters](docs/OrderParameters.md)
  - [SourcesApiClient::Source](docs/Source.md)
  - [SourcesApiClient::SourceType](docs/SourceType.md)
  - [SourcesApiClient::SourceTypesCollection](docs/SourceTypesCollection.md)
  - [SourcesApiClient::SourcesCollection](docs/SourcesCollection.md)
- - [SourcesApiClient::Tagging](docs/Tagging.md)
  - [SourcesApiClient::Tenant](docs/Tenant.md)
 
 

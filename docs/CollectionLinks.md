@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first** | **String** |  | [optional] 
 **last** | **String** |  | [optional] 
-**prev** | **String** |  | [optional] 
 **_next** | **String** |  | [optional] 
+**prev** | **String** |  | [optional] 
 
 ## Code Sample
 
@@ -16,8 +16,8 @@ require 'SourcesApiClient'
 
 instance = SourcesApiClient::CollectionLinks.new(first: null,
                                  last: null,
-                                 prev: null,
-                                 _next: null)
+                                 _next: null,
+                                 prev: null)
 ```
 
 
