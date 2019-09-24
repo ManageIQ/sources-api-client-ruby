@@ -143,7 +143,7 @@ describe 'DefaultApi' do
   # unit tests for get_documentation
   # Return this API document in JSON format
   # @param [Hash] opts the optional parameters
-  # @return [nil]
+  # @return [Object]
   describe 'get_documentation test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
