@@ -25,6 +25,8 @@ module SourcesApiClient
     # ID of the resource
     attr_accessor :source_id
 
+    attr_accessor :tenant
+
     attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -34,6 +36,7 @@ module SourcesApiClient
         :'created_at' => :'created_at',
         :'id' => :'id',
         :'source_id' => :'source_id',
+        :'tenant' => :'tenant',
         :'updated_at' => :'updated_at'
       }
     end
@@ -45,6 +48,7 @@ module SourcesApiClient
         :'created_at' => :'DateTime',
         :'id' => :'String',
         :'source_id' => :'String',
+        :'tenant' => :'String',
         :'updated_at' => :'DateTime'
       }
     end
@@ -78,6 +82,10 @@ module SourcesApiClient
 
       if attributes.key?(:'source_id')
         self.source_id = attributes[:'source_id']
+      end
+
+      if attributes.key?(:'tenant')
+        self.tenant = attributes[:'tenant']
       end
 
       if attributes.key?(:'updated_at')
@@ -158,6 +166,7 @@ module SourcesApiClient
           created_at == o.created_at &&
           id == o.id &&
           source_id == o.source_id &&
+          tenant == o.tenant &&
           updated_at == o.updated_at
     end
 
@@ -170,7 +179,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [application_type_id, created_at, id, source_id, updated_at].hash
+      [application_type_id, created_at, id, source_id, tenant, updated_at].hash
     end
 
     # Builds the object from hash

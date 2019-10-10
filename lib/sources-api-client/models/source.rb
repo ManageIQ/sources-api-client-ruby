@@ -21,6 +21,8 @@ module SourcesApiClient
     # ID of the resource
     attr_accessor :id
 
+    attr_accessor :imported
+
     attr_accessor :name
 
     # ID of the resource
@@ -40,6 +42,7 @@ module SourcesApiClient
         :'availability_status' => :'availability_status',
         :'created_at' => :'created_at',
         :'id' => :'id',
+        :'imported' => :'imported',
         :'name' => :'name',
         :'source_type_id' => :'source_type_id',
         :'tenant' => :'tenant',
@@ -55,6 +58,7 @@ module SourcesApiClient
         :'availability_status' => :'String',
         :'created_at' => :'DateTime',
         :'id' => :'String',
+        :'imported' => :'String',
         :'name' => :'String',
         :'source_type_id' => :'String',
         :'tenant' => :'String',
@@ -89,6 +93,10 @@ module SourcesApiClient
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'imported')
+        self.imported = attributes[:'imported']
       end
 
       if attributes.key?(:'name')
@@ -171,6 +179,7 @@ module SourcesApiClient
           availability_status == o.availability_status &&
           created_at == o.created_at &&
           id == o.id &&
+          imported == o.imported &&
           name == o.name &&
           source_type_id == o.source_type_id &&
           tenant == o.tenant &&
@@ -188,7 +197,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [availability_status, created_at, id, name, source_type_id, tenant, uid, updated_at, version].hash
+      [availability_status, created_at, id, imported, name, source_type_id, tenant, uid, updated_at, version].hash
     end
 
     # Builds the object from hash

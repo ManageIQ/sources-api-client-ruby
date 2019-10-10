@@ -1281,7 +1281,7 @@ Name | Type | Description  | Notes
 
 ## post_graph_ql
 
-> GraphQLResponse post_graph_ql(inline_object)
+> GraphQLResponse post_graph_ql(graph_ql_request)
 
 Perform a GraphQL Query
 
@@ -1300,11 +1300,11 @@ SourcesApiClient.configure do |config|
 end
 
 api_instance = SourcesApiClient::DefaultApi.new
-inline_object = SourcesApiClient::InlineObject.new # InlineObject | 
+graph_ql_request = SourcesApiClient::GraphQLRequest.new # GraphQLRequest | GraphQL Query Request
 
 begin
   #Perform a GraphQL Query
-  result = api_instance.post_graph_ql(inline_object)
+  result = api_instance.post_graph_ql(graph_ql_request)
   p result
 rescue SourcesApiClient::ApiError => e
   puts "Exception when calling DefaultApi->post_graph_ql: #{e}"
@@ -1316,7 +1316,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object** | [**InlineObject**](InlineObject.md)|  | 
+ **graph_ql_request** | [**GraphQLRequest**](GraphQLRequest.md)| GraphQL Query Request | 
 
 ### Return type
 

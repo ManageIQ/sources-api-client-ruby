@@ -1645,26 +1645,26 @@ module SourcesApiClient
 
     # Perform a GraphQL Query
     # Performs a GraphQL Query
-    # @param inline_object [InlineObject] 
+    # @param graph_ql_request [GraphQLRequest] GraphQL Query Request
     # @param [Hash] opts the optional parameters
     # @return [GraphQLResponse]
-    def post_graph_ql(inline_object, opts = {})
-      data, _status_code, _headers = post_graph_ql_with_http_info(inline_object, opts)
+    def post_graph_ql(graph_ql_request, opts = {})
+      data, _status_code, _headers = post_graph_ql_with_http_info(graph_ql_request, opts)
       data
     end
 
     # Perform a GraphQL Query
     # Performs a GraphQL Query
-    # @param inline_object [InlineObject] 
+    # @param graph_ql_request [GraphQLRequest] GraphQL Query Request
     # @param [Hash] opts the optional parameters
     # @return [Array<(GraphQLResponse, Integer, Hash)>] GraphQLResponse data, response status code and response headers
-    def post_graph_ql_with_http_info(inline_object, opts = {})
+    def post_graph_ql_with_http_info(graph_ql_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.post_graph_ql ...'
       end
-      # verify the required parameter 'inline_object' is set
-      if @api_client.config.client_side_validation && inline_object.nil?
-        fail ArgumentError, "Missing the required parameter 'inline_object' when calling DefaultApi.post_graph_ql"
+      # verify the required parameter 'graph_ql_request' is set
+      if @api_client.config.client_side_validation && graph_ql_request.nil?
+        fail ArgumentError, "Missing the required parameter 'graph_ql_request' when calling DefaultApi.post_graph_ql"
       end
       # resource path
       local_var_path = '/graphql'
@@ -1683,7 +1683,7 @@ module SourcesApiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(inline_object) 
+      post_body = opts[:body] || @api_client.object_to_http_body(graph_ql_request) 
 
       # return_type
       return_type = opts[:return_type] || 'GraphQLResponse' 

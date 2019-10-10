@@ -327,7 +327,7 @@ describe 'DefaultApi' do
   # unit tests for post_graph_ql
   # Perform a GraphQL Query
   # Performs a GraphQL Query
-  # @param inline_object 
+  # @param graph_ql_request GraphQL Query Request
   # @param [Hash] opts the optional parameters
   # @return [GraphQLResponse]
   describe 'post_graph_ql test' do

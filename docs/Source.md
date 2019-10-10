@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **availability_status** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
+**imported** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **source_type_id** | **String** | ID of the resource | [optional] 
 **tenant** | **String** |  | [optional] 
@@ -22,6 +23,7 @@ require 'SourcesApiClient'
 instance = SourcesApiClient::Source.new(availability_status: null,
                                  created_at: null,
                                  id: null,
+                                 imported: null,
                                  name: Sample Provider,
                                  source_type_id: null,
                                  tenant: null,
