@@ -1,4 +1,4 @@
-# SourcesApiClient::InlineObject
+# SourcesApiClient::GraphQLRequest
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'SourcesApiClient'
 
-instance = SourcesApiClient::InlineObject.new(query: null,
+instance = SourcesApiClient::GraphQLRequest.new(query: null,
                                  operation_name: null,
                                  variables: null)
 ```
