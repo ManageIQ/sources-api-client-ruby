@@ -16,6 +16,10 @@ module SourcesApiClient
   class Authentication
     attr_accessor :authtype
 
+    attr_accessor :availability_status
+
+    attr_accessor :availability_status_error
+
     attr_accessor :extra
 
     # ID of the resource
@@ -42,6 +46,8 @@ module SourcesApiClient
     def self.attribute_map
       {
         :'authtype' => :'authtype',
+        :'availability_status' => :'availability_status',
+        :'availability_status_error' => :'availability_status_error',
         :'extra' => :'extra',
         :'id' => :'id',
         :'name' => :'name',
@@ -59,6 +65,8 @@ module SourcesApiClient
     def self.openapi_types
       {
         :'authtype' => :'String',
+        :'availability_status' => :'String',
+        :'availability_status_error' => :'String',
         :'extra' => :'AuthenticationExtra',
         :'id' => :'String',
         :'name' => :'String',
@@ -89,6 +97,14 @@ module SourcesApiClient
 
       if attributes.key?(:'authtype')
         self.authtype = attributes[:'authtype']
+      end
+
+      if attributes.key?(:'availability_status')
+        self.availability_status = attributes[:'availability_status']
+      end
+
+      if attributes.key?(:'availability_status_error')
+        self.availability_status_error = attributes[:'availability_status_error']
       end
 
       if attributes.key?(:'extra')
@@ -185,6 +201,8 @@ module SourcesApiClient
       return true if self.equal?(o)
       self.class == o.class &&
           authtype == o.authtype &&
+          availability_status == o.availability_status &&
+          availability_status_error == o.availability_status_error &&
           extra == o.extra &&
           id == o.id &&
           name == o.name &&
@@ -206,7 +224,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [authtype, extra, id, name, password, resource_id, resource_type, status, status_details, tenant, username].hash
+      [authtype, availability_status, availability_status_error, extra, id, name, password, resource_id, resource_type, status, status_details, tenant, username].hash
     end
 
     # Builds the object from hash

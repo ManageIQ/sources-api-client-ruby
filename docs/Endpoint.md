@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**availability_status** | **String** |  | [optional] 
+**availability_status_error** | **String** |  | [optional] 
 **certificate_authority** | **String** | Optional X.509 Certificate Authority | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **default** | **Boolean** |  | [optional] 
@@ -24,7 +26,9 @@ Name | Type | Description | Notes
 ```ruby
 require 'SourcesApiClient'
 
-instance = SourcesApiClient::Endpoint.new(certificate_authority: null,
+instance = SourcesApiClient::Endpoint.new(availability_status: null,
+                                 availability_status_error: null,
+                                 certificate_authority: null,
                                  created_at: null,
                                  default: null,
                                  host: www.example.com,
