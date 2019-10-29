@@ -130,6 +130,8 @@ Class | Method | HTTP request | Description
  - [SourcesApiClient::CollectionMetadata](docs/CollectionMetadata.md)
  - [SourcesApiClient::Endpoint](docs/Endpoint.md)
  - [SourcesApiClient::EndpointsCollection](docs/EndpointsCollection.md)
+ - [SourcesApiClient::ErrorNotFound](docs/ErrorNotFound.md)
+ - [SourcesApiClient::ErrorNotFoundErrors](docs/ErrorNotFoundErrors.md)
  - [SourcesApiClient::GraphQLRequest](docs/GraphQLRequest.md)
  - [SourcesApiClient::GraphQLResponse](docs/GraphQLResponse.md)
  - [SourcesApiClient::Source](docs/Source.md)

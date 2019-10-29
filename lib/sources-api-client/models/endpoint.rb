@@ -14,6 +14,10 @@ require 'date'
 
 module SourcesApiClient
   class Endpoint
+    attr_accessor :availability_status
+
+    attr_accessor :availability_status_error
+
     # Optional X.509 Certificate Authority
     attr_accessor :certificate_authority
 
@@ -54,6 +58,8 @@ module SourcesApiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'availability_status' => :'availability_status',
+        :'availability_status_error' => :'availability_status_error',
         :'certificate_authority' => :'certificate_authority',
         :'created_at' => :'created_at',
         :'default' => :'default',
@@ -74,6 +80,8 @@ module SourcesApiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'availability_status' => :'String',
+        :'availability_status_error' => :'String',
         :'certificate_authority' => :'String',
         :'created_at' => :'DateTime',
         :'default' => :'Boolean',
@@ -105,6 +113,14 @@ module SourcesApiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'availability_status')
+        self.availability_status = attributes[:'availability_status']
+      end
+
+      if attributes.key?(:'availability_status_error')
+        self.availability_status_error = attributes[:'availability_status_error']
+      end
 
       if attributes.key?(:'certificate_authority')
         self.certificate_authority = attributes[:'certificate_authority']
@@ -215,6 +231,8 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          availability_status == o.availability_status &&
+          availability_status_error == o.availability_status_error &&
           certificate_authority == o.certificate_authority &&
           created_at == o.created_at &&
           default == o.default &&
@@ -240,7 +258,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [certificate_authority, created_at, default, host, id, path, port, receptor_node, role, scheme, source_id, tenant, updated_at, verify_ssl].hash
+      [availability_status, availability_status_error, certificate_authority, created_at, default, host, id, path, port, receptor_node, role, scheme, source_id, tenant, updated_at, verify_ssl].hash
     end
 
     # Builds the object from hash

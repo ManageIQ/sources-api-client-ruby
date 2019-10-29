@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **application_type_id** | **String** | ID of the resource | [optional] 
+**availability_status** | **String** |  | [optional] 
+**availability_status_error** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **source_id** | **String** | ID of the resource | [optional] 
@@ -17,6 +19,8 @@ Name | Type | Description | Notes
 require 'SourcesApiClient'
 
 instance = SourcesApiClient::Application.new(application_type_id: null,
+                                 availability_status: null,
+                                 availability_status_error: null,
                                  created_at: null,
                                  id: null,
                                  source_id: null,

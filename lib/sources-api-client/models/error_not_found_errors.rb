@@ -13,51 +13,24 @@ OpenAPI Generator version: 4.1.1
 require 'date'
 
 module SourcesApiClient
-  class Application
-    # ID of the resource
-    attr_accessor :application_type_id
+  class ErrorNotFoundErrors
+    attr_accessor :status
 
-    attr_accessor :availability_status
-
-    attr_accessor :availability_status_error
-
-    attr_accessor :created_at
-
-    # ID of the resource
-    attr_accessor :id
-
-    # ID of the resource
-    attr_accessor :source_id
-
-    attr_accessor :tenant
-
-    attr_accessor :updated_at
+    attr_accessor :detail
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'application_type_id' => :'application_type_id',
-        :'availability_status' => :'availability_status',
-        :'availability_status_error' => :'availability_status_error',
-        :'created_at' => :'created_at',
-        :'id' => :'id',
-        :'source_id' => :'source_id',
-        :'tenant' => :'tenant',
-        :'updated_at' => :'updated_at'
+        :'status' => :'status',
+        :'detail' => :'detail'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'application_type_id' => :'String',
-        :'availability_status' => :'String',
-        :'availability_status_error' => :'String',
-        :'created_at' => :'DateTime',
-        :'id' => :'String',
-        :'source_id' => :'String',
-        :'tenant' => :'String',
-        :'updated_at' => :'DateTime'
+        :'status' => :'Integer',
+        :'detail' => :'String'
       }
     end
 
@@ -65,47 +38,23 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::Application` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::ErrorNotFoundErrors` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::Application`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::ErrorNotFoundErrors`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'application_type_id')
-        self.application_type_id = attributes[:'application_type_id']
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
-      if attributes.key?(:'availability_status')
-        self.availability_status = attributes[:'availability_status']
-      end
-
-      if attributes.key?(:'availability_status_error')
-        self.availability_status_error = attributes[:'availability_status_error']
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'source_id')
-        self.source_id = attributes[:'source_id']
-      end
-
-      if attributes.key?(:'tenant')
-        self.tenant = attributes[:'tenant']
-      end
-
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
+      if attributes.key?(:'detail')
+        self.detail = attributes[:'detail']
       end
     end
 
@@ -113,64 +62,13 @@ module SourcesApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      pattern = Regexp.new(/^\d+$/)
-      if !@application_type_id.nil? && @application_type_id !~ pattern
-        invalid_properties.push("invalid value for \"application_type_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
-      if !@id.nil? && @id !~ pattern
-        invalid_properties.push("invalid value for \"id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
-      if !@source_id.nil? && @source_id !~ pattern
-        invalid_properties.push("invalid value for \"source_id\", must conform to the pattern #{pattern}.")
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@application_type_id.nil? && @application_type_id !~ Regexp.new(/^\d+$/)
-      return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
-      return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] application_type_id Value to be assigned
-    def application_type_id=(application_type_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !application_type_id.nil? && application_type_id !~ pattern
-        fail ArgumentError, "invalid value for \"application_type_id\", must conform to the pattern #{pattern}."
-      end
-
-      @application_type_id = application_type_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] id Value to be assigned
-    def id=(id)
-      pattern = Regexp.new(/^\d+$/)
-      if !id.nil? && id !~ pattern
-        fail ArgumentError, "invalid value for \"id\", must conform to the pattern #{pattern}."
-      end
-
-      @id = id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] source_id Value to be assigned
-    def source_id=(source_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !source_id.nil? && source_id !~ pattern
-        fail ArgumentError, "invalid value for \"source_id\", must conform to the pattern #{pattern}."
-      end
-
-      @source_id = source_id
     end
 
     # Checks equality by comparing each attribute.
@@ -178,14 +76,8 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          application_type_id == o.application_type_id &&
-          availability_status == o.availability_status &&
-          availability_status_error == o.availability_status_error &&
-          created_at == o.created_at &&
-          id == o.id &&
-          source_id == o.source_id &&
-          tenant == o.tenant &&
-          updated_at == o.updated_at
+          status == o.status &&
+          detail == o.detail
     end
 
     # @see the `==` method
@@ -197,7 +89,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [application_type_id, availability_status, availability_status_error, created_at, id, source_id, tenant, updated_at].hash
+      [status, detail].hash
     end
 
     # Builds the object from hash
