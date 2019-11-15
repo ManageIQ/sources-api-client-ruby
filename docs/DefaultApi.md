@@ -33,6 +33,7 @@ Method | HTTP request | Description
 [**show_endpoint**](DefaultApi.md#show_endpoint) | **GET** /endpoints/{id} | Show an existing Endpoint
 [**show_source**](DefaultApi.md#show_source) | **GET** /sources/{id} | Show an existing Source
 [**show_source_type**](DefaultApi.md#show_source_type) | **GET** /source_types/{id} | Show an existing SourceType
+[**update_application**](DefaultApi.md#update_application) | **PATCH** /applications/{id} | Update an existing Application
 [**update_authentication**](DefaultApi.md#update_authentication) | **PATCH** /authentications/{id} | Update an existing Authentication
 [**update_endpoint**](DefaultApi.md#update_endpoint) | **PATCH** /endpoints/{id} | Update an existing Endpoint
 [**update_source**](DefaultApi.md#update_source) | **PATCH** /sources/{id} | Update an existing Source
@@ -584,7 +585,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -605,6 +607,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -644,7 +647,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -664,6 +668,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -703,7 +708,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -723,6 +729,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -762,7 +769,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -782,6 +790,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -822,7 +831,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -843,6 +853,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -882,7 +893,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -902,6 +914,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -942,7 +955,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -963,6 +977,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1003,7 +1018,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1024,6 +1040,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1064,7 +1081,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1085,6 +1103,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1125,7 +1144,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1146,6 +1166,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1185,7 +1206,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1205,6 +1227,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1244,7 +1267,8 @@ api_instance = SourcesApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: SourcesApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1264,6 +1288,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1647,6 +1672,60 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## update_application
+
+> update_application(id, application)
+
+Update an existing Application
+
+Updates a Application object
+
+### Example
+
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+application = SourcesApiClient::Application.new # Application | Application attributes to update
+
+begin
+  #Update an existing Application
+  api_instance.update_application(id, application)
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->update_application: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **application** | [**Application**](Application.md)| Application attributes to update | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**application_type_id** | **String** | ID of the resource | [optional] 
+**application_type_id** | **String** | ID of the resource | [optional] [readonly] 
 **availability_status** | **String** |  | [optional] 
 **availability_status_error** | **String** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
-**tenant** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
+**tenant** | **String** |  | [optional] [readonly] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

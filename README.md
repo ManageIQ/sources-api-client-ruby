@@ -111,6 +111,7 @@ Class | Method | HTTP request | Description
 *SourcesApiClient::DefaultApi* | [**show_endpoint**](docs/DefaultApi.md#show_endpoint) | **GET** /endpoints/{id} | Show an existing Endpoint
 *SourcesApiClient::DefaultApi* | [**show_source**](docs/DefaultApi.md#show_source) | **GET** /sources/{id} | Show an existing Source
 *SourcesApiClient::DefaultApi* | [**show_source_type**](docs/DefaultApi.md#show_source_type) | **GET** /source_types/{id} | Show an existing SourceType
+*SourcesApiClient::DefaultApi* | [**update_application**](docs/DefaultApi.md#update_application) | **PATCH** /applications/{id} | Update an existing Application
 *SourcesApiClient::DefaultApi* | [**update_authentication**](docs/DefaultApi.md#update_authentication) | **PATCH** /authentications/{id} | Update an existing Authentication
 *SourcesApiClient::DefaultApi* | [**update_endpoint**](docs/DefaultApi.md#update_endpoint) | **PATCH** /endpoints/{id} | Update an existing Endpoint
 *SourcesApiClient::DefaultApi* | [**update_source**](docs/DefaultApi.md#update_source) | **PATCH** /sources/{id} | Update an existing Source

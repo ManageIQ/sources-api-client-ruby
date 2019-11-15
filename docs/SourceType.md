@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **DateTime** |  | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
 **icon_url** | **String** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
 **name** | **String** |  | [optional] 
 **product_name** | **String** |  | [optional] 
 **schema** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 **vendor** | **String** |  | [optional] 
 
 ## Code Sample
