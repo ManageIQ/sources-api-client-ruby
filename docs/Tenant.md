@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
-**external_tenant** | **String** |  | [optional] 
+**name** | **String** |  | [optional] [readonly] 
+**description** | **String** |  | [optional] [readonly] 
+**external_tenant** | **String** |  | [optional] [readonly] 
 
 ## Code Sample
 

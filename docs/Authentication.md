@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **availability_status** | **String** |  | [optional] 
 **availability_status_error** | **String** |  | [optional] 
 **extra** | [**AuthenticationExtra**](AuthenticationExtra.md) |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
 **name** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
-**resource_id** | **String** | ID of the resource | [optional] 
+**resource_id** | **String** | ID of the resource | [optional] [readonly] 
 **resource_type** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **status_details** | **String** |  | [optional] 
-**tenant** | **String** |  | [optional] 
+**tenant** | **String** |  | [optional] [readonly] 
 **username** | **String** |  | [optional] 
 
 ## Code Sample

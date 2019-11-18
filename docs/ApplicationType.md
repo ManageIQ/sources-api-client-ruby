@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **DateTime** |  | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
 **dependent_applications** | [**Object**](.md) |  | [optional] 
 **display_name** | **String** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
 **name** | **String** |  | [optional] 
 **supported_authentication_types** | [**Object**](.md) |  | [optional] 
 **supported_source_types** | [**Object**](.md) |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 
