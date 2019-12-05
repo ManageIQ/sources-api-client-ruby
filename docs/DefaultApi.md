@@ -4,6 +4,7 @@ All URIs are relative to *https://cloud.redhat.com//api/sources/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**check_availability_source**](DefaultApi.md#check_availability_source) | **POST** /sources/{id}/check_availability | Checks Availability of a Source
 [**create_application**](DefaultApi.md#create_application) | **POST** /applications | Create a new Application
 [**create_authentication**](DefaultApi.md#create_authentication) | **POST** /authentications | Create a new Authentication
 [**create_endpoint**](DefaultApi.md#create_endpoint) | **POST** /endpoints | Create a new Endpoint
@@ -38,6 +39,58 @@ Method | HTTP request | Description
 [**update_endpoint**](DefaultApi.md#update_endpoint) | **PATCH** /endpoints/{id} | Update an existing Endpoint
 [**update_source**](DefaultApi.md#update_source) | **PATCH** /sources/{id} | Update an existing Source
 
+
+
+## check_availability_source
+
+> check_availability_source(id)
+
+Checks Availability of a Source
+
+Checks Availability of a Source
+
+### Example
+
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Checks Availability of a Source
+  api_instance.check_availability_source(id)
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->check_availability_source: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## create_application

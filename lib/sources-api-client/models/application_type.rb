@@ -14,6 +14,8 @@ require 'date'
 
 module SourcesApiClient
   class ApplicationType
+    attr_accessor :availability_check_url
+
     attr_accessor :created_at
 
     attr_accessor :dependent_applications
@@ -34,6 +36,7 @@ module SourcesApiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'availability_check_url' => :'availability_check_url',
         :'created_at' => :'created_at',
         :'dependent_applications' => :'dependent_applications',
         :'display_name' => :'display_name',
@@ -48,6 +51,7 @@ module SourcesApiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'availability_check_url' => :'String',
         :'created_at' => :'DateTime',
         :'dependent_applications' => :'Object',
         :'display_name' => :'String',
@@ -79,6 +83,10 @@ module SourcesApiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'availability_check_url')
+        self.availability_check_url = attributes[:'availability_check_url']
+      end
 
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
@@ -148,6 +156,7 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          availability_check_url == o.availability_check_url &&
           created_at == o.created_at &&
           dependent_applications == o.dependent_applications &&
           display_name == o.display_name &&
@@ -167,7 +176,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [created_at, dependent_applications, display_name, id, name, supported_authentication_types, supported_source_types, updated_at].hash
+      [availability_check_url, created_at, dependent_applications, display_name, id, name, supported_authentication_types, supported_source_types, updated_at].hash
     end
 
     # Builds the object from hash

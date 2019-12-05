@@ -32,6 +32,18 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for check_availability_source
+  # Checks Availability of a Source
+  # Checks Availability of a Source
+  # @param id ID of the resource
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'check_availability_source test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for create_application
   # Create a new Application
   # Creates a Application object
