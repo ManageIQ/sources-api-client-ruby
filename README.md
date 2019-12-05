@@ -64,14 +64,13 @@ SourcesApiClient.configure do |config|
 end
 
 api_instance = SourcesApiClient::DefaultApi.new
-application = SourcesApiClient::Application.new # Application | Application attributes to create
+id = 'id_example' # String | ID of the resource
 
 begin
-  #Create a new Application
-  result = api_instance.create_application(application)
-  p result
+  #Checks Availability of a Source
+  api_instance.check_availability_source(id)
 rescue SourcesApiClient::ApiError => e
-  puts "Exception when calling DefaultApi->create_application: #{e}"
+  puts "Exception when calling DefaultApi->check_availability_source: #{e}"
 end
 
 ```
@@ -82,6 +81,7 @@ All URIs are relative to *https://cloud.redhat.com//api/sources/v1.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*SourcesApiClient::DefaultApi* | [**check_availability_source**](docs/DefaultApi.md#check_availability_source) | **POST** /sources/{id}/check_availability | Checks Availability of a Source
 *SourcesApiClient::DefaultApi* | [**create_application**](docs/DefaultApi.md#create_application) | **POST** /applications | Create a new Application
 *SourcesApiClient::DefaultApi* | [**create_authentication**](docs/DefaultApi.md#create_authentication) | **POST** /authentications | Create a new Authentication
 *SourcesApiClient::DefaultApi* | [**create_endpoint**](docs/DefaultApi.md#create_endpoint) | **POST** /endpoints | Create a new Endpoint
