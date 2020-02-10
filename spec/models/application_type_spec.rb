@@ -32,12 +32,6 @@ describe 'ApplicationType' do
       expect(@instance).to be_instance_of(SourcesApiClient::ApplicationType)
     end
   end
-  describe 'test attribute "availability_check_url"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   describe 'test attribute "created_at"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

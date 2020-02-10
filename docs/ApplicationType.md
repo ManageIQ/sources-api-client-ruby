@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**availability_check_url** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] [readonly] 
 **dependent_applications** | [**Object**](.md) |  | [optional] 
 **display_name** | **String** |  | [optional] 
@@ -19,8 +18,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'SourcesApiClient'
 
-instance = SourcesApiClient::ApplicationType.new(availability_check_url: null,
-                                 created_at: null,
+instance = SourcesApiClient::ApplicationType.new(created_at: null,
                                  dependent_applications: null,
                                  display_name: null,
                                  id: null,
