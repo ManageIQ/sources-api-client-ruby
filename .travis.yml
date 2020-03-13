@@ -1,11 +1,16 @@
+---
 language: ruby
 cache: bundler
 rvm:
-  - 2.3
-  - 2.4
-  - 2.5
-script:
-  - bundle install --path vendor/bundle
-  - bundle exec rspec
-  - gem build sources-api-client.gemspec
-  - gem install ./sources-api-client-1.0.0.gem
+- 2.5.7
+- 2.6.5
+before_install:
+- 'echo ''gem: --no-ri --no-rdoc --no-document'' > ~/.gemrc'
+- gem install bundler
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
+after_script:
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
