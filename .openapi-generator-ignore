@@ -26,3 +26,4 @@ README.md
 .rubocop.yml
 .gitignore
 .travis.yml
+CHANGELOG.md
