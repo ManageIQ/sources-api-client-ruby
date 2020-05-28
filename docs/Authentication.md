@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **availability_status_error** | **String** |  | [optional] 
 **extra** | [**AuthenticationExtra**](AuthenticationExtra.md) |  | [optional] 
 **id** | **String** | ID of the resource | [optional] [readonly] 
+**last_available_at** | **DateTime** |  | [optional] 
+**last_checked_at** | **DateTime** |  | [optional] 
 **name** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **resource_id** | **String** | ID of the resource | [optional] [readonly] 
@@ -27,6 +29,8 @@ instance = SourcesApiClient::Authentication.new(authtype: openshift_default,
                                  availability_status_error: null,
                                  extra: null,
                                  id: null,
+                                 last_available_at: null,
+                                 last_checked_at: null,
                                  name: OpenShift default,
                                  password: null,
                                  resource_id: null,

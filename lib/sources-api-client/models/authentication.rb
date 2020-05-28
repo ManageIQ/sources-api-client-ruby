@@ -25,6 +25,10 @@ module SourcesApiClient
     # ID of the resource
     attr_accessor :id
 
+    attr_accessor :last_available_at
+
+    attr_accessor :last_checked_at
+
     attr_accessor :name
 
     attr_accessor :password
@@ -48,6 +52,8 @@ module SourcesApiClient
         :'availability_status_error' => :'availability_status_error',
         :'extra' => :'extra',
         :'id' => :'id',
+        :'last_available_at' => :'last_available_at',
+        :'last_checked_at' => :'last_checked_at',
         :'name' => :'name',
         :'password' => :'password',
         :'resource_id' => :'resource_id',
@@ -66,6 +72,8 @@ module SourcesApiClient
         :'availability_status_error' => :'String',
         :'extra' => :'AuthenticationExtra',
         :'id' => :'String',
+        :'last_available_at' => :'DateTime',
+        :'last_checked_at' => :'DateTime',
         :'name' => :'String',
         :'password' => :'String',
         :'resource_id' => :'String',
@@ -115,6 +123,14 @@ module SourcesApiClient
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'last_available_at')
+        self.last_available_at = attributes[:'last_available_at']
+      end
+
+      if attributes.key?(:'last_checked_at')
+        self.last_checked_at = attributes[:'last_checked_at']
       end
 
       if attributes.key?(:'name')
@@ -203,6 +219,8 @@ module SourcesApiClient
           availability_status_error == o.availability_status_error &&
           extra == o.extra &&
           id == o.id &&
+          last_available_at == o.last_available_at &&
+          last_checked_at == o.last_checked_at &&
           name == o.name &&
           password == o.password &&
           resource_id == o.resource_id &&
@@ -221,7 +239,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [authtype, availability_status, availability_status_error, extra, id, name, password, resource_id, resource_type, status, status_details, username].hash
+      [authtype, availability_status, availability_status_error, extra, id, last_available_at, last_checked_at, name, password, resource_id, resource_type, status, status_details, username].hash
     end
 
     # Builds the object from hash

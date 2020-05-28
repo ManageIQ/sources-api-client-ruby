@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **default** | **Boolean** |  | [optional] 
 **host** | **String** | URI host component | [optional] 
 **id** | **String** | ID of the resource | [optional] [readonly] 
+**last_available_at** | **DateTime** |  | [optional] 
+**last_checked_at** | **DateTime** |  | [optional] 
 **path** | **String** | URI path component | [optional] 
 **port** | **Integer** | URI port component | [optional] 
 **receptor_node** | **String** | Identifier of a receptor node | [optional] 
@@ -32,6 +34,8 @@ instance = SourcesApiClient::Endpoint.new(availability_status: null,
                                  default: null,
                                  host: www.example.com,
                                  id: null,
+                                 last_available_at: null,
+                                 last_checked_at: null,
                                  path: /api/v1,
                                  port: 80,
                                  receptor_node: null,
