@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **source_ref** | **String** |  | [optional] 
 **source_type_id** | **String** | ID of the resource | [optional] [readonly] 
-**tenant** | **String** |  | [optional] [readonly] 
 **uid** | **String** |  | [optional] [readonly] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
 **version** | **String** |  | [optional] [readonly] 
@@ -28,7 +27,6 @@ instance = SourcesApiClient::Source.new(availability_status: null,
                                  name: Sample Provider,
                                  source_ref: null,
                                  source_type_id: null,
-                                 tenant: null,
                                  uid: null,
                                  updated_at: null,
                                  version: 6.5.0)
