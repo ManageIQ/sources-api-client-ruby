@@ -23,6 +23,10 @@ module SourcesApiClient
 
     attr_accessor :imported
 
+    attr_accessor :last_available_at
+
+    attr_accessor :last_checked_at
+
     attr_accessor :name
 
     attr_accessor :source_ref
@@ -43,6 +47,8 @@ module SourcesApiClient
         :'created_at' => :'created_at',
         :'id' => :'id',
         :'imported' => :'imported',
+        :'last_available_at' => :'last_available_at',
+        :'last_checked_at' => :'last_checked_at',
         :'name' => :'name',
         :'source_ref' => :'source_ref',
         :'source_type_id' => :'source_type_id',
@@ -59,6 +65,8 @@ module SourcesApiClient
         :'created_at' => :'DateTime',
         :'id' => :'String',
         :'imported' => :'String',
+        :'last_available_at' => :'DateTime',
+        :'last_checked_at' => :'DateTime',
         :'name' => :'String',
         :'source_ref' => :'String',
         :'source_type_id' => :'String',
@@ -103,6 +111,14 @@ module SourcesApiClient
 
       if attributes.key?(:'imported')
         self.imported = attributes[:'imported']
+      end
+
+      if attributes.key?(:'last_available_at')
+        self.last_available_at = attributes[:'last_available_at']
+      end
+
+      if attributes.key?(:'last_checked_at')
+        self.last_checked_at = attributes[:'last_checked_at']
       end
 
       if attributes.key?(:'name')
@@ -186,6 +202,8 @@ module SourcesApiClient
           created_at == o.created_at &&
           id == o.id &&
           imported == o.imported &&
+          last_available_at == o.last_available_at &&
+          last_checked_at == o.last_checked_at &&
           name == o.name &&
           source_ref == o.source_ref &&
           source_type_id == o.source_type_id &&
@@ -203,7 +221,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [availability_status, created_at, id, imported, name, source_ref, source_type_id, uid, updated_at, version].hash
+      [availability_status, created_at, id, imported, last_available_at, last_checked_at, name, source_ref, source_type_id, uid, updated_at, version].hash
     end
 
     # Builds the object from hash

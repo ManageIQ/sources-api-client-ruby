@@ -26,6 +26,10 @@ module SourcesApiClient
     # ID of the resource
     attr_accessor :id
 
+    attr_accessor :last_available_at
+
+    attr_accessor :last_checked_at
+
     # ID of the resource
     attr_accessor :source_id
 
@@ -39,6 +43,8 @@ module SourcesApiClient
         :'availability_status_error' => :'availability_status_error',
         :'created_at' => :'created_at',
         :'id' => :'id',
+        :'last_available_at' => :'last_available_at',
+        :'last_checked_at' => :'last_checked_at',
         :'source_id' => :'source_id',
         :'updated_at' => :'updated_at'
       }
@@ -52,6 +58,8 @@ module SourcesApiClient
         :'availability_status_error' => :'String',
         :'created_at' => :'DateTime',
         :'id' => :'String',
+        :'last_available_at' => :'DateTime',
+        :'last_checked_at' => :'DateTime',
         :'source_id' => :'String',
         :'updated_at' => :'DateTime'
       }
@@ -96,6 +104,14 @@ module SourcesApiClient
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'last_available_at')
+        self.last_available_at = attributes[:'last_available_at']
+      end
+
+      if attributes.key?(:'last_checked_at')
+        self.last_checked_at = attributes[:'last_checked_at']
       end
 
       if attributes.key?(:'source_id')
@@ -181,6 +197,8 @@ module SourcesApiClient
           availability_status_error == o.availability_status_error &&
           created_at == o.created_at &&
           id == o.id &&
+          last_available_at == o.last_available_at &&
+          last_checked_at == o.last_checked_at &&
           source_id == o.source_id &&
           updated_at == o.updated_at
     end
@@ -194,7 +212,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [application_type_id, availability_status, availability_status_error, created_at, id, source_id, updated_at].hash
+      [application_type_id, availability_status, availability_status_error, created_at, id, last_available_at, last_checked_at, source_id, updated_at].hash
     end
 
     # Builds the object from hash

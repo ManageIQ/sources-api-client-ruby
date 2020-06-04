@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **created_at** | **DateTime** |  | [optional] [readonly] 
 **id** | **String** | ID of the resource | [optional] [readonly] 
 **imported** | **String** |  | [optional] 
+**last_available_at** | **DateTime** |  | [optional] 
+**last_checked_at** | **DateTime** |  | [optional] 
 **name** | **String** |  | [optional] 
 **source_ref** | **String** |  | [optional] 
 **source_type_id** | **String** | ID of the resource | [optional] [readonly] 
@@ -24,6 +26,8 @@ instance = SourcesApiClient::Source.new(availability_status: null,
                                  created_at: null,
                                  id: null,
                                  imported: null,
+                                 last_available_at: null,
+                                 last_checked_at: null,
                                  name: Sample Provider,
                                  source_ref: null,
                                  source_type_id: null,

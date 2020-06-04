@@ -31,6 +31,10 @@ module SourcesApiClient
     # ID of the resource
     attr_accessor :id
 
+    attr_accessor :last_available_at
+
+    attr_accessor :last_checked_at
+
     # URI path component
     attr_accessor :path
 
@@ -63,6 +67,8 @@ module SourcesApiClient
         :'default' => :'default',
         :'host' => :'host',
         :'id' => :'id',
+        :'last_available_at' => :'last_available_at',
+        :'last_checked_at' => :'last_checked_at',
         :'path' => :'path',
         :'port' => :'port',
         :'receptor_node' => :'receptor_node',
@@ -84,6 +90,8 @@ module SourcesApiClient
         :'default' => :'Boolean',
         :'host' => :'String',
         :'id' => :'String',
+        :'last_available_at' => :'DateTime',
+        :'last_checked_at' => :'DateTime',
         :'path' => :'String',
         :'port' => :'Integer',
         :'receptor_node' => :'String',
@@ -142,6 +150,14 @@ module SourcesApiClient
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'last_available_at')
+        self.last_available_at = attributes[:'last_available_at']
+      end
+
+      if attributes.key?(:'last_checked_at')
+        self.last_checked_at = attributes[:'last_checked_at']
       end
 
       if attributes.key?(:'path')
@@ -236,6 +252,8 @@ module SourcesApiClient
           default == o.default &&
           host == o.host &&
           id == o.id &&
+          last_available_at == o.last_available_at &&
+          last_checked_at == o.last_checked_at &&
           path == o.path &&
           port == o.port &&
           receptor_node == o.receptor_node &&
@@ -255,7 +273,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [availability_status, availability_status_error, certificate_authority, created_at, default, host, id, path, port, receptor_node, role, scheme, source_id, updated_at, verify_ssl].hash
+      [availability_status, availability_status_error, certificate_authority, created_at, default, host, id, last_available_at, last_checked_at, path, port, receptor_node, role, scheme, source_id, updated_at, verify_ssl].hash
     end
 
     # Builds the object from hash
