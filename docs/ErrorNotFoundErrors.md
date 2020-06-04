@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **Integer** |  | [optional] 
+**status** | **String** |  | [optional] 
 **detail** | **String** |  | [optional] 
 
 ## Code Sample

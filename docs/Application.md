@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **created_at** | **DateTime** |  | [optional] [readonly] 
 **id** | **String** | ID of the resource | [optional] [readonly] 
 **source_id** | **String** | ID of the resource | [optional] [readonly] 
-**tenant** | **String** |  | [optional] [readonly] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
@@ -24,7 +23,6 @@ instance = SourcesApiClient::Application.new(application_type_id: null,
                                  created_at: null,
                                  id: null,
                                  source_id: null,
-                                 tenant: null,
                                  updated_at: null)
 ```
 

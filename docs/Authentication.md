@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **resource_type** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **status_details** | **String** |  | [optional] 
-**tenant** | **String** |  | [optional] [readonly] 
 **username** | **String** |  | [optional] 
 
 ## Code Sample
@@ -34,7 +33,6 @@ instance = SourcesApiClient::Authentication.new(authtype: openshift_default,
                                  resource_type: Endpoint,
                                  status: valid,
                                  status_details: null,
-                                 tenant: null,
                                  username: user@example.com)
 ```
 

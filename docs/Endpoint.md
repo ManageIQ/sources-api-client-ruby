@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **role** | **String** |  | [optional] 
 **scheme** | **String** | URI scheme component | [optional] 
 **source_id** | **String** | ID of the resource | [optional] [readonly] 
-**tenant** | **String** |  | [optional] [readonly] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
 **verify_ssl** | **Boolean** | Should SSL be verified | [optional] 
 
@@ -39,7 +38,6 @@ instance = SourcesApiClient::Endpoint.new(availability_status: null,
                                  role: default,
                                  scheme: https,
                                  source_id: null,
-                                 tenant: null,
                                  updated_at: null,
                                  verify_ssl: true)
 ```

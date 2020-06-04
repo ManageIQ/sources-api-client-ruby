@@ -13,7 +13,7 @@ OpenAPI Generator version: 4.2.1
 require 'date'
 
 module SourcesApiClient
-  class EndpointsCollection
+  class ApplicationAuthenticationsCollection
     attr_accessor :meta
 
     attr_accessor :links
@@ -34,7 +34,7 @@ module SourcesApiClient
       {
         :'meta' => :'CollectionMetadata',
         :'links' => :'CollectionLinks',
-        :'data' => :'Array<Endpoint>'
+        :'data' => :'Array<ApplicationAuthentication>'
       }
     end
 
@@ -48,13 +48,13 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::EndpointsCollection` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::ApplicationAuthenticationsCollection` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::EndpointsCollection`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::ApplicationAuthenticationsCollection`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
