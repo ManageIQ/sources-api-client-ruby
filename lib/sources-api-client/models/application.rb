@@ -68,6 +68,7 @@ module SourcesApiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'availability_status_error',
       ])
     end
 
