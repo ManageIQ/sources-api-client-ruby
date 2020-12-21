@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**authtype** | **String** |  | [optional] 
+**authtype** | **String** |  | [optional] [readonly] 
 **availability_status** | **String** |  | [optional] 
 **availability_status_error** | **String** |  | [optional] 
 **extra** | [**AuthenticationExtra**](AuthenticationExtra.md) |  | [optional] 
