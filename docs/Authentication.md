@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**authtype** | **String** |  | [optional] 
+**authtype** | **String** |  | [optional] [readonly] 
 **availability_status** | **String** |  | [optional] 
 **availability_status_error** | **String** |  | [optional] 
 **extra** | [**AuthenticationExtra**](AuthenticationExtra.md) |  | [optional] 
@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **password** | **String** |  | [optional] 
 **resource_id** | **String** | ID of the resource | [optional] [readonly] 
 **resource_type** | **String** |  | [optional] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
 **status** | **String** |  | [optional] 
 **status_details** | **String** |  | [optional] 
 **username** | **String** |  | [optional] 
@@ -35,6 +36,7 @@ instance = SourcesApiClient::Authentication.new(authtype: openshift_default,
                                  password: null,
                                  resource_id: null,
                                  resource_type: Endpoint,
+                                 source_id: null,
                                  status: valid,
                                  status_details: null,
                                  username: user@example.com)

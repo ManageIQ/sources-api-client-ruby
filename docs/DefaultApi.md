@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**list_endpoints**](DefaultApi.md#list_endpoints) | **GET** /endpoints | List Endpoints
 [**list_source_application_types**](DefaultApi.md#list_source_application_types) | **GET** /sources/{id}/application_types | List ApplicationTypes for Source
 [**list_source_applications**](DefaultApi.md#list_source_applications) | **GET** /sources/{id}/applications | List Applications for Source
+[**list_source_authentications**](DefaultApi.md#list_source_authentications) | **GET** /sources/{id}/authentications | List Authentications for Source
 [**list_source_endpoints**](DefaultApi.md#list_source_endpoints) | **GET** /sources/{id}/endpoints | List Endpoints for Source
 [**list_source_type_sources**](DefaultApi.md#list_source_type_sources) | **GET** /source_types/{id}/sources | List Sources for SourceType
 [**list_source_types**](DefaultApi.md#list_source_types) | **GET** /source_types | List SourceTypes
@@ -1279,6 +1280,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApplicationsCollection**](ApplicationsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_source_authentications
+
+> AuthenticationsCollection list_source_authentications(id, opts)
+
+List Authentications for Source
+
+Returns an array of Authentication objects
+
+### Example
+
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: nil # Object | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List Authentications for Source
+  result = api_instance.list_source_authentications(id, opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_authentications: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**Object**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**AuthenticationsCollection**](AuthenticationsCollection.md)
 
 ### Authorization
 
