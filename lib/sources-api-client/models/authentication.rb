@@ -38,6 +38,9 @@ module SourcesApiClient
 
     attr_accessor :resource_type
 
+    # ID of the resource
+    attr_accessor :source_id
+
     attr_accessor :status
 
     attr_accessor :status_details
@@ -58,6 +61,7 @@ module SourcesApiClient
         :'password' => :'password',
         :'resource_id' => :'resource_id',
         :'resource_type' => :'resource_type',
+        :'source_id' => :'source_id',
         :'status' => :'status',
         :'status_details' => :'status_details',
         :'username' => :'username'
@@ -78,6 +82,7 @@ module SourcesApiClient
         :'password' => :'String',
         :'resource_id' => :'String',
         :'resource_type' => :'String',
+        :'source_id' => :'String',
         :'status' => :'String',
         :'status_details' => :'String',
         :'username' => :'String'
@@ -149,6 +154,10 @@ module SourcesApiClient
         self.resource_type = attributes[:'resource_type']
       end
 
+      if attributes.key?(:'source_id')
+        self.source_id = attributes[:'source_id']
+      end
+
       if attributes.key?(:'status')
         self.status = attributes[:'status']
       end
@@ -176,6 +185,11 @@ module SourcesApiClient
         invalid_properties.push("invalid value for \"resource_id\", must conform to the pattern #{pattern}.")
       end
 
+      pattern = Regexp.new(/^\d+$/)
+      if !@source_id.nil? && @source_id !~ pattern
+        invalid_properties.push("invalid value for \"source_id\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -184,6 +198,7 @@ module SourcesApiClient
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       return false if !@resource_id.nil? && @resource_id !~ Regexp.new(/^\d+$/)
+      return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
       true
     end
 
@@ -209,6 +224,17 @@ module SourcesApiClient
       @resource_id = resource_id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] source_id Value to be assigned
+    def source_id=(source_id)
+      pattern = Regexp.new(/^\d+$/)
+      if !source_id.nil? && source_id !~ pattern
+        fail ArgumentError, "invalid value for \"source_id\", must conform to the pattern #{pattern}."
+      end
+
+      @source_id = source_id
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -225,6 +251,7 @@ module SourcesApiClient
           password == o.password &&
           resource_id == o.resource_id &&
           resource_type == o.resource_type &&
+          source_id == o.source_id &&
           status == o.status &&
           status_details == o.status_details &&
           username == o.username
@@ -239,7 +266,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [authtype, availability_status, availability_status_error, extra, id, last_available_at, last_checked_at, name, password, resource_id, resource_type, status, status_details, username].hash
+      [authtype, availability_status, availability_status_error, extra, id, last_available_at, last_checked_at, name, password, resource_id, resource_type, source_id, status, status_details, username].hash
     end
 
     # Builds the object from hash
