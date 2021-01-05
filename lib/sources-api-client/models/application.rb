@@ -23,6 +23,8 @@ module SourcesApiClient
 
     attr_accessor :created_at
 
+    attr_accessor :extra
+
     # ID of the resource
     attr_accessor :id
 
@@ -42,6 +44,7 @@ module SourcesApiClient
         :'availability_status' => :'availability_status',
         :'availability_status_error' => :'availability_status_error',
         :'created_at' => :'created_at',
+        :'extra' => :'extra',
         :'id' => :'id',
         :'last_available_at' => :'last_available_at',
         :'last_checked_at' => :'last_checked_at',
@@ -57,6 +60,7 @@ module SourcesApiClient
         :'availability_status' => :'String',
         :'availability_status_error' => :'String',
         :'created_at' => :'DateTime',
+        :'extra' => :'Object',
         :'id' => :'String',
         :'last_available_at' => :'DateTime',
         :'last_checked_at' => :'DateTime',
@@ -100,6 +104,10 @@ module SourcesApiClient
 
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'extra')
+        self.extra = attributes[:'extra']
       end
 
       if attributes.key?(:'id')
@@ -196,6 +204,7 @@ module SourcesApiClient
           availability_status == o.availability_status &&
           availability_status_error == o.availability_status_error &&
           created_at == o.created_at &&
+          extra == o.extra &&
           id == o.id &&
           last_available_at == o.last_available_at &&
           last_checked_at == o.last_checked_at &&
@@ -212,7 +221,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [application_type_id, availability_status, availability_status_error, created_at, id, last_available_at, last_checked_at, source_id, updated_at].hash
+      [application_type_id, availability_status, availability_status_error, created_at, extra, id, last_available_at, last_checked_at, source_id, updated_at].hash
     end
 
     # Builds the object from hash
