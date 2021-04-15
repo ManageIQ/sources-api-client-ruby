@@ -13,20 +13,32 @@ OpenAPI Generator version: 4.2.1
 require 'date'
 
 module SourcesApiClient
-  class AuthenticationExtra
-    attr_accessor :azure
+  class BulkCreatePayloadApplications
+    attr_accessor :application_type_name
+
+    attr_accessor :application_type_id
+
+    attr_accessor :extra
+
+    attr_accessor :source_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'azure' => :'azure'
+        :'application_type_name' => :'application_type_name',
+        :'application_type_id' => :'application_type_id',
+        :'extra' => :'extra',
+        :'source_name' => :'source_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'azure' => :'AuthenticationExtraAzure'
+        :'application_type_name' => :'String',
+        :'application_type_id' => :'String',
+        :'extra' => :'Object',
+        :'source_name' => :'String'
       }
     end
 
@@ -40,19 +52,31 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::AuthenticationExtra` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::BulkCreatePayloadApplications` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::AuthenticationExtra`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::BulkCreatePayloadApplications`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'azure')
-        self.azure = attributes[:'azure']
+      if attributes.key?(:'application_type_name')
+        self.application_type_name = attributes[:'application_type_name']
+      end
+
+      if attributes.key?(:'application_type_id')
+        self.application_type_id = attributes[:'application_type_id']
+      end
+
+      if attributes.key?(:'extra')
+        self.extra = attributes[:'extra']
+      end
+
+      if attributes.key?(:'source_name')
+        self.source_name = attributes[:'source_name']
       end
     end
 
@@ -74,7 +98,10 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          azure == o.azure
+          application_type_name == o.application_type_name &&
+          application_type_id == o.application_type_id &&
+          extra == o.extra &&
+          source_name == o.source_name
     end
 
     # @see the `==` method
@@ -86,7 +113,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [azure].hash
+      [application_type_name, application_type_id, extra, source_name].hash
     end
 
     # Builds the object from hash

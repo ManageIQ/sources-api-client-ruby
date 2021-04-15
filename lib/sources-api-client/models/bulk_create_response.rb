@@ -13,20 +13,36 @@ OpenAPI Generator version: 4.2.1
 require 'date'
 
 module SourcesApiClient
-  class AuthenticationExtra
-    attr_accessor :azure
+  class BulkCreateResponse
+    attr_accessor :superkey
+
+    attr_accessor :sources
+
+    attr_accessor :endpoints
+
+    attr_accessor :applications
+
+    attr_accessor :authentications
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'azure' => :'azure'
+        :'superkey' => :'superkey',
+        :'sources' => :'sources',
+        :'endpoints' => :'endpoints',
+        :'applications' => :'applications',
+        :'authentications' => :'authentications'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'azure' => :'AuthenticationExtraAzure'
+        :'superkey' => :'Boolean',
+        :'sources' => :'Array<Source>',
+        :'endpoints' => :'Array<Endpoint>',
+        :'applications' => :'Array<Application>',
+        :'authentications' => :'Array<Authentication>'
       }
     end
 
@@ -40,19 +56,45 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::AuthenticationExtra` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::BulkCreateResponse` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::AuthenticationExtra`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::BulkCreateResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'azure')
-        self.azure = attributes[:'azure']
+      if attributes.key?(:'superkey')
+        self.superkey = attributes[:'superkey']
+      else
+        self.superkey = false
+      end
+
+      if attributes.key?(:'sources')
+        if (value = attributes[:'sources']).is_a?(Array)
+          self.sources = value
+        end
+      end
+
+      if attributes.key?(:'endpoints')
+        if (value = attributes[:'endpoints']).is_a?(Array)
+          self.endpoints = value
+        end
+      end
+
+      if attributes.key?(:'applications')
+        if (value = attributes[:'applications']).is_a?(Array)
+          self.applications = value
+        end
+      end
+
+      if attributes.key?(:'authentications')
+        if (value = attributes[:'authentications']).is_a?(Array)
+          self.authentications = value
+        end
       end
     end
 
@@ -74,7 +116,11 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          azure == o.azure
+          superkey == o.superkey &&
+          sources == o.sources &&
+          endpoints == o.endpoints &&
+          applications == o.applications &&
+          authentications == o.authentications
     end
 
     # @see the `==` method
@@ -86,7 +132,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [azure].hash
+      [superkey, sources, endpoints, applications, authentications].hash
     end
 
     # Builds the object from hash

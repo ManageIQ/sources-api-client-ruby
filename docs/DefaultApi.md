@@ -1,9 +1,10 @@
 # SourcesApiClient::DefaultApi
 
-All URIs are relative to *https://cloud.redhat.com//api/sources/v3.0*
+All URIs are relative to *https://cloud.redhat.com//api/sources/v3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**bulk_create**](DefaultApi.md#bulk_create) | **POST** /bulk_create | Bulk-create a Source and specified sub-resources
 [**check_availability_source**](DefaultApi.md#check_availability_source) | **POST** /sources/{id}/check_availability | Checks Availability of a Source
 [**create_application**](DefaultApi.md#create_application) | **POST** /applications | Create a new Application
 [**create_application_authentication**](DefaultApi.md#create_application_authentication) | **POST** /application_authentications | Create a new ApplicationAuthentication
@@ -16,8 +17,10 @@ Method | HTTP request | Description
 [**delete_endpoint**](DefaultApi.md#delete_endpoint) | **DELETE** /endpoints/{id} | Delete an existing Endpoint
 [**delete_source**](DefaultApi.md#delete_source) | **DELETE** /sources/{id} | Delete an existing Source
 [**get_documentation**](DefaultApi.md#get_documentation) | **GET** /openapi.json | Return this API document in JSON format
+[**list_all_app_meta_data**](DefaultApi.md#list_all_app_meta_data) | **GET** /app_meta_data | List AppMetaData
 [**list_all_application_authentications**](DefaultApi.md#list_all_application_authentications) | **GET** /application_authentications | List ApplicationAuthentications
 [**list_application_authentications**](DefaultApi.md#list_application_authentications) | **GET** /applications/{id}/authentications | List Authentications for Application
+[**list_application_type_app_meta_data**](DefaultApi.md#list_application_type_app_meta_data) | **GET** /application_types/{id}/app_meta_data | List AppMetaData for ApplicationType
 [**list_application_type_sources**](DefaultApi.md#list_application_type_sources) | **GET** /application_types/{id}/sources | List Sources for ApplicationType
 [**list_application_types**](DefaultApi.md#list_application_types) | **GET** /application_types | List ApplicationTypes
 [**list_applications**](DefaultApi.md#list_applications) | **GET** /applications | List Applications
@@ -32,6 +35,7 @@ Method | HTTP request | Description
 [**list_source_types**](DefaultApi.md#list_source_types) | **GET** /source_types | List SourceTypes
 [**list_sources**](DefaultApi.md#list_sources) | **GET** /sources | List Sources
 [**post_graph_ql**](DefaultApi.md#post_graph_ql) | **POST** /graphql | Perform a GraphQL Query
+[**show_app_meta_data**](DefaultApi.md#show_app_meta_data) | **GET** /app_meta_data/{id} | Show an existing AppMetaData
 [**show_application**](DefaultApi.md#show_application) | **GET** /applications/{id} | Show an existing Application
 [**show_application_authentication**](DefaultApi.md#show_application_authentication) | **GET** /application_authentications/{id} | Show an existing ApplicationAuthentication
 [**show_application_type**](DefaultApi.md#show_application_type) | **GET** /application_types/{id} | Show an existing ApplicationType
@@ -45,6 +49,61 @@ Method | HTTP request | Description
 [**update_endpoint**](DefaultApi.md#update_endpoint) | **PATCH** /endpoints/{id} | Update an existing Endpoint
 [**update_source**](DefaultApi.md#update_source) | **PATCH** /sources/{id} | Update an existing Source
 
+
+
+## bulk_create
+
+> BulkCreateResponse bulk_create(opts)
+
+Bulk-create a Source and specified sub-resources
+
+Bulk-create a Source and specified sub-resources
+
+### Example
+
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+opts = {
+  bulk_create_payload: SourcesApiClient::BulkCreatePayload.new # BulkCreatePayload | 
+}
+
+begin
+  #Bulk-create a Source and specified sub-resources
+  result = api_instance.bulk_create(opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->bulk_create: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bulk_create_payload** | [**BulkCreatePayload**](BulkCreatePayload.md)|  | [optional] 
+
+### Return type
+
+[**BulkCreateResponse**](BulkCreateResponse.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## check_availability_source
@@ -671,6 +730,67 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
+## list_all_app_meta_data
+
+> AppMetaDataCollection list_all_app_meta_data(opts)
+
+List AppMetaData
+
+Returns an array of AppMetaData objects
+
+### Example
+
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: nil # Object | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List AppMetaData
+  result = api_instance.list_all_app_meta_data(opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_all_app_meta_data: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**Object**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**AppMetaDataCollection**](AppMetaDataCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_all_application_authentications
 
 > ApplicationAuthenticationsCollection list_all_application_authentications(opts)
@@ -784,6 +904,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuthenticationsCollection**](AuthenticationsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_application_type_app_meta_data
+
+> AppMetaDataCollection list_application_type_app_meta_data(id, opts)
+
+List AppMetaData for ApplicationType
+
+Returns an array of AppMetaData objects
+
+### Example
+
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: nil # Object | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List AppMetaData for ApplicationType
+  result = api_instance.list_application_type_app_meta_data(id, opts)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_application_type_app_meta_data: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**Object**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**AppMetaDataCollection**](AppMetaDataCollection.md)
 
 ### Authorization
 
@@ -1652,6 +1835,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## show_app_meta_data
+
+> AppMetaData show_app_meta_data(id)
+
+Show an existing AppMetaData
+
+Returns a AppMetaData object
+
+### Example
+
+```ruby
+# load the gem
+require 'sources-api-client'
+# setup authorization
+SourcesApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = SourcesApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing AppMetaData
+  result = api_instance.show_app_meta_data(id)
+  p result
+rescue SourcesApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_app_meta_data: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**AppMetaData**](AppMetaData.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
