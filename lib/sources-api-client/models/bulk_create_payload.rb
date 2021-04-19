@@ -13,20 +13,36 @@ OpenAPI Generator version: 4.2.1
 require 'date'
 
 module SourcesApiClient
-  class AuthenticationExtra
-    attr_accessor :azure
+  class BulkCreatePayload
+    # Array of Source objects to create. Only supported fields are name + type, source_type_id will automatically be set based on the `source_type_name`. 
+    attr_accessor :sources
+
+    # Array of Endpoint objects to create. The operation looks up the parent source by the `source_name` attribute so the `source_name` must match one of the `source`'s names in the payload. 
+    attr_accessor :endpoints
+
+    # Array of Application objects to create. The operation looks up the parent Source by the `source_name` attribute so the `source_name` must match one of the `source`'s names in the payload.  application_type_id will be automatically looked up and set by the `application_type_name` attribute via regex. 
+    attr_accessor :applications
+
+    # Array of Authentications to create. This one is a bit more tricky. `resource_type` tells the action where to look for the parent, must be either application/endpoint/source  if the parent is a source, it looks up by name. if the parent is an endpoint, it looks up via host so the hostname must match. if the parent is an application, it looks up via application type so the value must match the application type which matches 
+    attr_accessor :authentications
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'azure' => :'azure'
+        :'sources' => :'sources',
+        :'endpoints' => :'endpoints',
+        :'applications' => :'applications',
+        :'authentications' => :'authentications'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'azure' => :'AuthenticationExtraAzure'
+        :'sources' => :'Array<BulkCreatePayloadSources>',
+        :'endpoints' => :'Array<BulkCreatePayloadEndpoints>',
+        :'applications' => :'Array<BulkCreatePayloadApplications>',
+        :'authentications' => :'Array<BulkCreatePayloadAuthentications>'
       }
     end
 
@@ -40,19 +56,39 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::AuthenticationExtra` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::BulkCreatePayload` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::AuthenticationExtra`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::BulkCreatePayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'azure')
-        self.azure = attributes[:'azure']
+      if attributes.key?(:'sources')
+        if (value = attributes[:'sources']).is_a?(Array)
+          self.sources = value
+        end
+      end
+
+      if attributes.key?(:'endpoints')
+        if (value = attributes[:'endpoints']).is_a?(Array)
+          self.endpoints = value
+        end
+      end
+
+      if attributes.key?(:'applications')
+        if (value = attributes[:'applications']).is_a?(Array)
+          self.applications = value
+        end
+      end
+
+      if attributes.key?(:'authentications')
+        if (value = attributes[:'authentications']).is_a?(Array)
+          self.authentications = value
+        end
       end
     end
 
@@ -74,7 +110,10 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          azure == o.azure
+          sources == o.sources &&
+          endpoints == o.endpoints &&
+          applications == o.applications &&
+          authentications == o.authentications
     end
 
     # @see the `==` method
@@ -86,7 +125,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [azure].hash
+      [sources, endpoints, applications, authentications].hash
     end
 
     # Builds the object from hash

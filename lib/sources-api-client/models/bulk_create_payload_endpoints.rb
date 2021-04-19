@@ -13,20 +13,40 @@ OpenAPI Generator version: 4.2.1
 require 'date'
 
 module SourcesApiClient
-  class AuthenticationExtra
-    attr_accessor :azure
+  class BulkCreatePayloadEndpoints
+    attr_accessor :scheme
+
+    attr_accessor :host
+
+    attr_accessor :path
+
+    attr_accessor :port
+
+    attr_accessor :verify_ssl
+
+    attr_accessor :source_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'azure' => :'azure'
+        :'scheme' => :'scheme',
+        :'host' => :'host',
+        :'path' => :'path',
+        :'port' => :'port',
+        :'verify_ssl' => :'verify_ssl',
+        :'source_name' => :'source_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'azure' => :'AuthenticationExtraAzure'
+        :'scheme' => :'String',
+        :'host' => :'String',
+        :'path' => :'String',
+        :'port' => :'Integer',
+        :'verify_ssl' => :'Boolean',
+        :'source_name' => :'String'
       }
     end
 
@@ -40,19 +60,39 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::AuthenticationExtra` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::BulkCreatePayloadEndpoints` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::AuthenticationExtra`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::BulkCreatePayloadEndpoints`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'azure')
-        self.azure = attributes[:'azure']
+      if attributes.key?(:'scheme')
+        self.scheme = attributes[:'scheme']
+      end
+
+      if attributes.key?(:'host')
+        self.host = attributes[:'host']
+      end
+
+      if attributes.key?(:'path')
+        self.path = attributes[:'path']
+      end
+
+      if attributes.key?(:'port')
+        self.port = attributes[:'port']
+      end
+
+      if attributes.key?(:'verify_ssl')
+        self.verify_ssl = attributes[:'verify_ssl']
+      end
+
+      if attributes.key?(:'source_name')
+        self.source_name = attributes[:'source_name']
       end
     end
 
@@ -74,7 +114,12 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          azure == o.azure
+          scheme == o.scheme &&
+          host == o.host &&
+          path == o.path &&
+          port == o.port &&
+          verify_ssl == o.verify_ssl &&
+          source_name == o.source_name
     end
 
     # @see the `==` method
@@ -86,7 +131,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [azure].hash
+      [scheme, host, path, port, verify_ssl, source_name].hash
     end
 
     # Builds the object from hash

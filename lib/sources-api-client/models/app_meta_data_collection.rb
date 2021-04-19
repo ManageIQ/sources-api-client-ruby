@@ -13,20 +13,28 @@ OpenAPI Generator version: 4.2.1
 require 'date'
 
 module SourcesApiClient
-  class AuthenticationExtra
-    attr_accessor :azure
+  class AppMetaDataCollection
+    attr_accessor :meta
+
+    attr_accessor :links
+
+    attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'azure' => :'azure'
+        :'meta' => :'meta',
+        :'links' => :'links',
+        :'data' => :'data'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'azure' => :'AuthenticationExtraAzure'
+        :'meta' => :'CollectionMetadata',
+        :'links' => :'CollectionLinks',
+        :'data' => :'Array<AppMetaData>'
       }
     end
 
@@ -40,19 +48,29 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::AuthenticationExtra` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::AppMetaDataCollection` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::AuthenticationExtra`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::AppMetaDataCollection`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'azure')
-        self.azure = attributes[:'azure']
+      if attributes.key?(:'meta')
+        self.meta = attributes[:'meta']
+      end
+
+      if attributes.key?(:'links')
+        self.links = attributes[:'links']
+      end
+
+      if attributes.key?(:'data')
+        if (value = attributes[:'data']).is_a?(Array)
+          self.data = value
+        end
       end
     end
 
@@ -74,7 +92,9 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          azure == o.azure
+          meta == o.meta &&
+          links == o.links &&
+          data == o.data
     end
 
     # @see the `==` method
@@ -86,7 +106,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [azure].hash
+      [meta, links, data].hash
     end
 
     # Builds the object from hash

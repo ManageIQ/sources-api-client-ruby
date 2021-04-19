@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**app_creation_workflow** | **String** |  | [optional] 
 **availability_status** | **String** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] [readonly] 
 **id** | **String** | ID of the resource | [optional] [readonly] 
@@ -22,7 +23,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'SourcesApiClient'
 
-instance = SourcesApiClient::Source.new(availability_status: null,
+instance = SourcesApiClient::Source.new(app_creation_workflow: null,
+                                 availability_status: null,
                                  created_at: null,
                                  id: null,
                                  imported: null,
