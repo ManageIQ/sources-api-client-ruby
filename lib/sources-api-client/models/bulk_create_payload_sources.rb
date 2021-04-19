@@ -13,20 +13,59 @@ OpenAPI Generator version: 4.2.1
 require 'date'
 
 module SourcesApiClient
-  class AuthenticationExtra
-    attr_accessor :azure
+  class BulkCreatePayloadSources
+    attr_accessor :name
+
+    # Source Type from supported types
+    attr_accessor :source_type_name
+
+    attr_accessor :source_ref
+
+    attr_accessor :source_type_id
+
+    attr_accessor :app_creation_workflow
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'azure' => :'azure'
+        :'name' => :'name',
+        :'source_type_name' => :'source_type_name',
+        :'source_ref' => :'source_ref',
+        :'source_type_id' => :'source_type_id',
+        :'app_creation_workflow' => :'app_creation_workflow'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'azure' => :'AuthenticationExtraAzure'
+        :'name' => :'String',
+        :'source_type_name' => :'String',
+        :'source_ref' => :'String',
+        :'source_type_id' => :'String',
+        :'app_creation_workflow' => :'String'
       }
     end
 
@@ -40,19 +79,35 @@ module SourcesApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::AuthenticationExtra` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SourcesApiClient::BulkCreatePayloadSources` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::AuthenticationExtra`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SourcesApiClient::BulkCreatePayloadSources`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'azure')
-        self.azure = attributes[:'azure']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'source_type_name')
+        self.source_type_name = attributes[:'source_type_name']
+      end
+
+      if attributes.key?(:'source_ref')
+        self.source_ref = attributes[:'source_ref']
+      end
+
+      if attributes.key?(:'source_type_id')
+        self.source_type_id = attributes[:'source_type_id']
+      end
+
+      if attributes.key?(:'app_creation_workflow')
+        self.app_creation_workflow = attributes[:'app_creation_workflow']
       end
     end
 
@@ -66,7 +121,31 @@ module SourcesApiClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      source_type_name_validator = EnumAttributeValidator.new('String', ["amazon", "azure", "ansible-tower", "openshift", "satellite", "google"])
+      return false unless source_type_name_validator.valid?(@source_type_name)
+      app_creation_workflow_validator = EnumAttributeValidator.new('String', ["manual_configuration", "account_authorization"])
+      return false unless app_creation_workflow_validator.valid?(@app_creation_workflow)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] source_type_name Object to be assigned
+    def source_type_name=(source_type_name)
+      validator = EnumAttributeValidator.new('String', ["amazon", "azure", "ansible-tower", "openshift", "satellite", "google"])
+      unless validator.valid?(source_type_name)
+        fail ArgumentError, "invalid value for \"source_type_name\", must be one of #{validator.allowable_values}."
+      end
+      @source_type_name = source_type_name
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] app_creation_workflow Object to be assigned
+    def app_creation_workflow=(app_creation_workflow)
+      validator = EnumAttributeValidator.new('String', ["manual_configuration", "account_authorization"])
+      unless validator.valid?(app_creation_workflow)
+        fail ArgumentError, "invalid value for \"app_creation_workflow\", must be one of #{validator.allowable_values}."
+      end
+      @app_creation_workflow = app_creation_workflow
     end
 
     # Checks equality by comparing each attribute.
@@ -74,7 +153,11 @@ module SourcesApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          azure == o.azure
+          name == o.name &&
+          source_type_name == o.source_type_name &&
+          source_ref == o.source_ref &&
+          source_type_id == o.source_type_id &&
+          app_creation_workflow == o.app_creation_workflow
     end
 
     # @see the `==` method
@@ -86,7 +169,7 @@ module SourcesApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [azure].hash
+      [name, source_type_name, source_ref, source_type_id, app_creation_workflow].hash
     end
 
     # Builds the object from hash
